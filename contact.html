@@ -1,9 +1,52 @@
-<section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | StudentHub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-<h2>Contact Us</h2>
+<nav>
+  <a class="brand" href="index.html">Student<span>Hub</span></a>
 
-<p>Email : info@studenthub.com</p>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="events.html">Events</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html">Login</a>
+  </div>
+</nav>
 
-<p>Phone : 9876543210</p>
+<main class="container">
+  <form class="form-card" data-message="Your message was sent successfully!">
+    <h2>Contact Us</h2>
 
-</section>
+    <div class="field">
+      <label>Name</label>
+      <input type="text" required>
+    </div>
+
+    <div class="field">
+      <label>Email</label>
+      <input type="email" required>
+    </div>
+
+    <div class="field">
+      <label>Message</label>
+      <textarea required></textarea>
+    </div>
+
+    <button class="btn" type="submit">Send Message</button>
+  </form>
+</main>
+
+<footer class="footer">
+  © <span id="year"></span> StudentHub Portal
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

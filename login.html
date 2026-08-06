@@ -1,31 +1,53 @@
-<form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | StudentHub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-<label for="email">
+<nav>
+  <a class="brand" href="index.html">Student<span>Hub</span></a>
 
-Email
+  <div>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="events.html">Events</a>
+    <a href="contact.html">Contact</a>
+    <a href="register.html">Register</a>
+  </div>
+</nav>
 
-</label>
+<main class="container">
+  <form class="form-card" data-message="Login successful!">
 
-<input
-type="email"
-id="email">
+    <h2>Student Login</h2>
 
-<br><br>
+    <div class="field">
+      <label>Email</label>
+      <input type="email" placeholder="student@example.com" required>
+    </div>
 
-<label for="password">
+    <div class="field">
+      <label>Password</label>
+      <input type="password" placeholder="Enter password" required>
+    </div>
 
-Password
+    <button class="btn" type="submit">Login</button>
 
-</label>
+    <p>
+      New student?
+      <a href="register.html">Create an account</a>
+    </p>
+  </form>
+</main>
 
-<input
-type="password"
-id="password">
+<footer class="footer">
+  © <span id="year"></span> StudentHub Portal
+</footer>
 
-<br><br>
-
-<input
-type="submit"
-value="Login">
-
-</form>
+<script src="js/script.js"></script>
+</body>
+</html>

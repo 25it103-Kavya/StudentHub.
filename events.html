@@ -1,23 +1,63 @@
-<section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events | StudentHub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-<h2>Upcoming Events</h2>
+<nav>
+  <a class="brand" href="index.html">Student<span>Hub</span></a>
 
-<article>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="events.html">Events</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html">Login</a>
+  </div>
+</nav>
 
-Hackathon 2026
+<section class="section container">
+  <h1>Campus Events</h1>
+  <p>Participate in activities and connect with your college community.</p>
 
-</article>
+  <div class="grid">
+    <div class="card">
+      <h3>Orientation Day</h3>
+      <p>📅 September 10, 2026</p>
+      <p>📍 Main Auditorium</p>
+      <button class="btn" onclick="alert('Registered for Orientation Day!')">
+        Register
+      </button>
+    </div>
 
-<article>
+    <div class="card">
+      <h3>Coding Workshop</h3>
+      <p>📅 September 18, 2026</p>
+      <p>📍 Innovation Lab</p>
+      <button class="btn" onclick="alert('Registered for Coding Workshop!')">
+        Register
+      </button>
+    </div>
 
-AI Workshop
-
-</article>
-
-<article>
-
-Sports Week
-
-</article>
-
+    <div class="card">
+      <h3>Annual Sports Meet</h3>
+      <p>📅 October 02, 2026</p>
+      <p>📍 College Ground</p>
+      <button class="btn" onclick="alert('Registered for Sports Meet!')">
+        Register
+      </button>
+    </div>
+  </div>
 </section>
+
+<footer class="footer">
+  © <span id="year"></span> StudentHub Portal
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

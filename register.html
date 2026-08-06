@@ -1,41 +1,64 @@
-<main>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | StudentHub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-<section>
+<nav>
+  <a class="brand" href="index.html">Student<span>Hub</span></a>
 
-<h2>Student Registration</h2>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="events.html">Events</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html">Login</a>
+  </div>
+</nav>
 
-<form>
+<main class="container">
+  <form class="form-card" data-message="Registration successful!">
 
-<label for="name">Full Name</label>
+    <h2>Create Student Account</h2>
 
-<input
-type="text"
-id="name">
+    <div class="field">
+      <label>Full Name</label>
+      <input type="text" placeholder="Enter your name" required>
+    </div>
 
-<br><br>
+    <div class="field">
+      <label>Email</label>
+      <input type="email" placeholder="student@example.com" required>
+    </div>
 
-<label for="email">Email</label>
+    <div class="field">
+      <label>Course</label>
+      <select required>
+        <option value="">Select course</option>
+        <option>Information Technology</option>
+        <option>Computer Science</option>
+        <option>Business Administration</option>
+        <option>Electronics Engineering</option>
+      </select>
+    </div>
 
-<input
-type="email"
-id="email">
+    <div class="field">
+      <label>Password</label>
+      <input type="password" placeholder="Create password" required>
+    </div>
 
-<br><br>
-
-<label for="password">Password</label>
-
-<input
-type="password"
-id="password">
-
-<br><br>
-
-<input
-type="submit"
-value="Register">
-
-</form>
-
-</section>
-
+    <button class="btn" type="submit">Register</button>
+  </form>
 </main>
+
+<footer class="footer">
+  © <span id="year"></span> StudentHub Portal
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

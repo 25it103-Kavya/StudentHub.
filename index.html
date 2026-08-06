@@ -1,101 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>StudentHub - Home</title>
-
-<link rel="stylesheet" href="css/style.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | StudentHub</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header>
-
-<h1>StudentHub</h1>
-
-<p>Welcome to Student Portal</p>
-
-</header>
-
 <nav>
-    
+  <a class="brand" href="index.html">Student<span>Hub</span></a>
 
-<a href="index.html">Home</a>
-
-<a href="about.html">About</a>
-
-<a href="register.html">Register</a>
-
-<a href="login.html">Login</a>
-
-<a href="dashboard.html">Dashboard</a>
-
-<a href="events.html">Events</a>
-
-<a href="profile.html">Profile</a>
-
-<a href="contact.html">Contact</a>
-
-<a href="admin.html">Admin</a>
-
-<a href="faq.html">FAQ</a>
-
-<a href="feedback.html">Feedback</a>
-
-</nav>
-<!-- Breadcrumb Navigation -->
-<nav aria-label="Breadcrumb">
-    <a href="index.html">Home</a> &gt;
-    <span>About</span>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="events.html">Events</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html">Login</a>
+  </div>
 </nav>
 
-<main>
-
-<section>
-
-<h2>Latest Announcements</h2>
-
-<article>
-
-<h3>Semester Begins</h3>
-
-<p>Classes will begin from 15 July.</p>
-
-</article>
-
+<section class="hero">
+  <div class="container">
+    <h1>Your Campus Life, All in One Place</h1>
+    <p>
+      Manage your profile, discover events and stay connected
+      with your college community.
+    </p>
+    <a class="btn btn-light" href="register.html">Join StudentHub</a>
+  </div>
 </section>
 
-<aside>
+<section class="section container">
+  <h2>Everything Students Need</h2>
 
-<h3>Quick Links</h3>
+  <div class="grid">
+    <div class="card">
+      <h3>Student Dashboard</h3>
+      <p>View important academic and student information.</p>
+    </div>
 
-<ul>
+    <div class="card">
+      <h3>Campus Events</h3>
+      <p>Discover workshops, programs and college activities.</p>
+    </div>
 
-<li>Exam Schedule</li>
+    <div class="card">
+      <h3>Student Feedback</h3>
+      <p>Share your ideas and help improve campus life.</p>
+    </div>
+  </div>
+</section>
 
-<li>Library</li>
-
-<li>Placements</li>
-
-</ul>
-
-</aside>
-
-</main>
-
-<footer>
-
-<p>© 2026 StudentHub</p>
-
+<footer class="footer">
+  © <span id="year"></span> StudentHub Portal
 </footer>
 
+<script src="js/script.js"></script>
 </body>
-
 </html>

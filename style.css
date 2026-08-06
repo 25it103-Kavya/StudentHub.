@@ -1,0 +1,295 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5fcfd;
+  color: #164044;
+  line-height: 1.6;
+}
+
+nav {
+  background: #0FA4AF;
+  padding: 18px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 3px 10px #0B6E7533;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 8px;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #AFDDE5;
+}
+
+.brand {
+  font-size: 23px;
+  font-weight: bold;
+}
+
+.brand span {
+  color: #AFDDE5;
+}
+
+.hero {
+  padding: 100px 7%;
+  background: linear-gradient(135deg, #0FA4AF, #0B6E75);
+  color: white;
+}
+
+.hero h1 {
+  font-size: 48px;
+  max-width: 680px;
+  margin-bottom: 18px;
+}
+
+.hero p {
+  max-width: 620px;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.container {
+  width: 86%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.section {
+  padding: 55px 0;
+}
+
+.section h1,
+.section h2 {
+  color: #0B6E75;
+  margin-bottom: 15px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
+  margin-top: 25px;
+}
+
+.card,
+form {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid #AFDDE5;
+  box-shadow: 0 4px 14px #0B6E751C;
+}
+
+.card h3 {
+  color: #0B6E75;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #41666A;
+}
+
+.btn {
+  display: inline-block;
+  background: #0FA4AF;
+  color: white;
+  border: 2px solid #0FA4AF;
+  padding: 11px 18px;
+  border-radius: 7px;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background: #0B6E75;
+  border-color: #0B6E75;
+}
+
+.btn-light {
+  background: #AFDDE5;
+  color: #0B6E75;
+  border-color: #AFDDE5;
+}
+
+.btn-light:hover {
+  background: white;
+  color: #0B6E75;
+}
+
+.title {
+  text-align: center;
+  background: #AFDDE5;
+  padding: 45px 20px;
+  color: #0B6E75;
+}
+
+.title h1 {
+  font-size: 38px;
+  margin-bottom: 8px;
+}
+
+.form-card {
+  max-width: 510px;
+  margin: 50px auto;
+}
+
+.form-card h2 {
+  color: #0B6E75;
+  margin-bottom: 20px;
+}
+
+.field {
+  margin: 16px 0;
+}
+
+.field label {
+  display: block;
+  color: #0B6E75;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #0B6E75;
+  border-radius: 6px;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  color: #164044;
+  background: #FAFFFF;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: 3px solid #AFDDE5;
+  border-color: #0FA4AF;
+}
+
+.field textarea {
+  height: 115px;
+  resize: vertical;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  margin: 28px 0;
+}
+
+.stat {
+  background: #AFDDE5;
+  padding: 25px;
+  text-align: center;
+  border-radius: 12px;
+  border: 2px solid #0B6E75;
+  box-shadow: 0 4px 12px #0B6E7522;
+}
+
+.stat h2 {
+  color: #0B6E75;
+  font-size: 34px;
+  margin-bottom: 5px;
+}
+
+.stat p {
+  color: #164044;
+  font-weight: bold;
+}
+
+table {
+  width: 100%;
+  background: white;
+  border-collapse: collapse;
+  margin-top: 25px;
+  border: 2px solid #0B6E75;
+  box-shadow: 0 4px 14px #0B6E7522;
+}
+
+th,
+td {
+  padding: 14px;
+  text-align: left;
+  border: 1px solid #0B6E75;
+}
+
+th {
+  background: #0FA4AF;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background: #F0FBFC;
+}
+
+tr:hover {
+  background: #AFDDE5;
+}
+
+.footer {
+  background: #0B6E75;
+  color: white;
+  text-align: center;
+  padding: 25px;
+  margin-top: 50px;
+}
+
+a {
+  color: #0B6E75;
+}
+
+a:hover {
+  color: #0FA4AF;
+}
+
+@media (max-width: 650px) {
+  nav {
+    display: block;
+    text-align: center;
+  }
+
+  nav div {
+    margin-top: 15px;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 5px;
+  }
+
+  .hero {
+    padding: 65px 7%;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .title h1 {
+    font-size: 30px;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  th,
+  td {
+    padding: 9px;
+  }
+}

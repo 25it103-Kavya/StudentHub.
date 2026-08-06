@@ -1,15 +1,84 @@
-<section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel | StudentHub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-<h2>Admin Dashboard</h2>
+<nav>
+  <a class="brand" href="index.html">Student<span>Hub</span></a>
 
-<ul>
+  <div>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="events.html">Events</a>
+    <a href="index.html">Logout</a>
+  </div>
+</nav>
 
-<li>Manage Students</li>
+<section class="section container">
+  <h1>Admin Panel</h1>
 
-<li>Manage Events</li>
+  <div class="stats">
+    <div class="stat">
+      <h2>248</h2>
+      <p>Total Students</p>
+    </div>
 
-<li>Manage Faculty</li>
+    <div class="stat">
+      <h2>18</h2>
+      <p>Total Events</p>
+    </div>
 
-</ul>
+    <div class="stat">
+      <h2>36</h2>
+      <p>Feedback Items</p>
+    </div>
+  </div>
 
+  <h2>Student Records</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Student Name</th>
+        <th>Course</th>
+        <th>Email</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>Kavya Sharma</td>
+        <td>Information Technology</td>
+        <td>kavya@example.com</td>
+        <td>Active</td>
+      </tr>
+
+      <tr>
+        <td>Aarav Kumar</td>
+        <td>Computer Science</td>
+        <td>aarav@example.com</td>
+        <td>Active</td>
+      </tr>
+
+      <tr>
+        <td>Riya Patel</td>
+        <td>Business Administration</td>
+        <td>riya@example.com</td>
+        <td>Active</td>
+      </tr>
+    </tbody>
+  </table>
 </section>
+
+<footer class="footer">
+  © <span id="year"></span> StudentHub Portal
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
