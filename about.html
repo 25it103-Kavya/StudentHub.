@@ -5,17 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About | StudentHub</title>
   <style>
+    /* CSS Variables for Dynamic Light/Dark Theme */
+    :root {
+      --bg-color: #f4fbfb;
+      --text-color: #333333;
+      --hero-bg: #bce9f0;
+      --hero-title: #0f8a8c;
+      --hero-text: #1a6264;
+      --card-bg: #ffffff;
+      --card-border: #e1f3f5;
+      --card-title: #0f8a8c;
+      --card-p-color: #555555;
+      --stat-bg: #f0f9fa;
+      --stat-border: #d3f0f3;
+    }
+
+    /* Dark Theme Variable Overrides */
+    [data-theme="dark"] {
+      --bg-color: #121e24;
+      --text-color: #e0f2f1;
+      --hero-bg: #163238;
+      --hero-title: #4dd0e1;
+      --hero-text: #b2ebf2;
+      --card-bg: #1a2930;
+      --card-border: #263d47;
+      --card-title: #26a69a;
+      --card-p-color: #b0bec5;
+      --stat-bg: #1e3038;
+      --stat-border: #2c4754;
+    }
+
     /* Global Reset & Base Styles */
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
     }
 
     body {
-      background-color: #f4fbfb;
-      color: #333333;
+      background-color: var(--bg-color);
+      color: var(--text-color);
       display: flex;
       flex-direction: column;
       min-height: 100vh;
@@ -39,6 +70,12 @@
       border-radius: 20px;
       cursor: pointer;
       font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .dark-mode-btn:hover {
+      background-color: #ffffff;
+      color: #0f8a8c;
     }
 
     .logo {
@@ -66,19 +103,19 @@
 
     /* Hero Section */
     .hero {
-      background-color: #bce9f0;
+      background-color: var(--hero-bg);
       text-align: center;
       padding: 60px 20px;
     }
 
     .hero h1 {
-      color: #0f8a8c;
+      color: var(--hero-title);
       font-size: 2.8rem;
       margin-bottom: 10px;
     }
 
     .hero p {
-      color: #1a6264;
+      color: var(--hero-text);
       font-size: 1.2rem;
     }
 
@@ -92,22 +129,22 @@
 
     /* Feature Cards */
     .card {
-      background: #ffffff;
+      background: var(--card-bg);
       border-radius: 12px;
       padding: 35px;
       margin-bottom: 25px;
-      box-shadow: 0 4px 15px rgba(15, 138, 140, 0.08);
-      border: 1px solid #e1f3f5;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      border: 1px solid var(--card-border);
     }
 
     .card h2 {
-      color: #0f8a8c;
+      color: var(--card-title);
       font-size: 1.6rem;
       margin-bottom: 12px;
     }
 
     .card p {
-      color: #555555;
+      color: var(--card-p-color);
       line-height: 1.6;
       font-size: 1rem;
     }
@@ -129,20 +166,20 @@
     }
 
     .stat-box {
-      background-color: #f0f9fa;
+      background-color: var(--stat-bg);
       padding: 20px;
       border-radius: 8px;
-      border: 1px solid #d3f0f3;
+      border: 1px solid var(--stat-border);
     }
 
     .stat-box h3 {
-      color: #0f8a8c;
+      color: var(--card-title);
       font-size: 1.8rem;
       margin-bottom: 5px;
     }
 
     .stat-box p {
-      color: #555555;
+      color: var(--card-p-color);
       font-size: 0.9rem;
     }
 
@@ -170,14 +207,14 @@
 <body>
 
   <header>
-    <button class="dark-mode-btn">🌙 Dark Mode</button>
+    <button class="dark-mode-btn" id="themeToggleBtn" onclick="toggleTheme()">🌙 Dark Mode</button>
     <div class="logo">Student<span>Hub</span></div>
     <nav>
-      <a href="#">Home</a>
-      <a href="#" class="active">About</a>
-      <a href="#">Events</a>
-      <a href="#">Contact</a>
-      <a href="#">Login</a>
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="events.html">Events</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html">Login</a>
     </nav>
   </header>
 
@@ -233,6 +270,38 @@
   <footer>
     &copy; 2026 StudentHub Portal. All rights reserved.
   </footer>
+
+  <script>
+    // Function to toggle theme and persist in localStorage
+    function toggleTheme() {
+      const currentTheme = document.documentElement.getAttribute("data-theme");
+      const btn = document.getElementById("themeToggleBtn");
+
+      if (currentTheme === "dark") {
+        document.documentElement.setAttribute("data-theme", "light");
+        localStorage.setItem("theme", "light");
+        btn.innerHTML = "🌙 Dark Mode";
+      } else {
+        document.documentElement.setAttribute("data-theme", "dark");
+        localStorage.setItem("theme", "dark");
+        btn.innerHTML = "☀️ Light Mode";
+      }
+    }
+
+    // Initialize theme based on user's previous selection
+    (function initTheme() {
+      const savedTheme = localStorage.getItem("theme");
+      const btn = document.getElementById("themeToggleBtn");
+
+      if (savedTheme === "dark") {
+        document.documentElement.setAttribute("data-theme", "dark");
+        if (btn) btn.innerHTML = "☀️ Light Mode";
+      } else {
+        document.documentElement.setAttribute("data-theme", "light");
+        if (btn) btn.innerHTML = "🌙 Dark Mode";
+      }
+    })();
+  </script>
 
 </body>
 </html>
