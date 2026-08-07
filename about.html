@@ -1,52 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About | StudentHub</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Global Reset & Base Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f4fbfb;
+      color: #333333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Navbar */
+    header {
+      background-color: #0f8a8c;
+      padding: 15px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .dark-mode-btn {
+      background-color: transparent;
+      border: 1.5px solid #ffffff;
+      color: #ffffff;
+      padding: 6px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    .logo {
+      color: #ffffff;
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    .logo span {
+      font-weight: 300;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 1rem;
+      transition: opacity 0.2s;
+    }
+
+    nav a:hover, nav a.active {
+      opacity: 0.8;
+      text-decoration: underline;
+    }
+
+    /* Hero Section */
+    .hero {
+      background-color: #bce9f0;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .hero h1 {
+      color: #0f8a8c;
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      color: #1a6264;
+      font-size: 1.2rem;
+    }
+
+    /* Main Content Container */
+    .content-container {
+      max-width: 1000px;
+      margin: -30px auto 50px auto;
+      padding: 0 20px;
+      flex: 1;
+    }
+
+    /* Feature Cards */
+    .card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 35px;
+      margin-bottom: 25px;
+      box-shadow: 0 4px 15px rgba(15, 138, 140, 0.08);
+      border: 1px solid #e1f3f5;
+    }
+
+    .card h2 {
+      color: #0f8a8c;
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: #555555;
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+
+    /* Grid Layout for Vision & Features */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    /* Stats Banner */
+    .stats-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .stat-box {
+      background-color: #f0f9fa;
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid #d3f0f3;
+    }
+
+    .stat-box h3 {
+      color: #0f8a8c;
+      font-size: 1.8rem;
+      margin-bottom: 5px;
+    }
+
+    .stat-box p {
+      color: #555555;
+      font-size: 0.9rem;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #0f8a8c;
+      color: #ffffff;
+      text-align: center;
+      padding: 20px;
+      margin-top: auto;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .grid-2, .stats-container {
+        grid-template-columns: 1fr;
+      }
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<nav>
+  <header>
+    <button class="dark-mode-btn">🌙 Dark Mode</button>
+    <div class="logo">Student<span>Hub</span></div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#" class="active">About</a>
+      <a href="#">Events</a>
+      <a href="#">Contact</a>
+      <a href="#">Login</a>
+    </nav>
+  </header>
 
-  <button id="themeBtn">🌙 Dark Mode</button>
-  
-  <a class="brand" href="index.html">Student<span>Hub</span></a>
+  <section class="hero">
+    <h1>Empowering Campus Connection</h1>
+    <p>Bridging students, events, and opportunities into one seamlessly integrated platform.</p>
+  </section>
 
-  <div>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="events.html">Events</a>
-    <a href="contact.html">Contact</a>
-    <a href="login.html">Login</a>
+  <div class="content-container">
+
+    <div class="card">
+      <h2>Our Mission</h2>
+      <p>
+        StudentHub was designed to streamline academic life and vibrant campus culture into a unified digital experience. We empower students to effortlessly access academic announcements, manage profiles, discover interactive campus events, and collaborate directly with peers and organizations.
+      </p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h2>Our Vision</h2>
+        <p>
+          To build an interconnected and engaging university ecosystem where every student stays informed, active, and supported throughout their academic journey.
+        </p>
+      </div>
+      <div class="card">
+        <h2>Why StudentHub?</h2>
+        <p>
+          Say goodbye to cluttered email threads and scattered bulletin boards. StudentHub centralizes your essential campus activities into one intuitive dashboard.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>StudentHub At A Glance</h2>
+      <div class="stats-container">
+        <div class="stat-box">
+          <h3>Centralized</h3>
+          <p>All updates in one place</p>
+        </div>
+        <div class="stat-box">
+          <h3>Interactive</h3>
+          <p>Easy event participation</p>
+        </div>
+        <div class="stat-box">
+          <h3>Connected</h3>
+          <p>Direct peer communication</p>
+        </div>
+      </div>
+    </div>
+
   </div>
-</nav>
 
-<section class="title">
-  <h1>About StudentHub</h1>
-  <p>Your digital student community.</p>
-</section>
+  <footer>
+    &copy; 2026 StudentHub Portal. All rights reserved.
+  </footer>
 
-<section class="section container">
-  <div class="card">
-    <h2>Our Mission</h2>
-    <p>
-      StudentHub brings student services and campus activities
-      into one simple and easy-to-use portal.
-    </p>
-
-    <p>
-      Students can manage their profiles, participate in events,
-      send feedback and stay updated with college announcements.
-    </p>
-  </div>
-</section>
-
-<footer class="footer">
-  © <span id="year"></span> StudentHub Portal
-</footer>
-
-<script src="js/script.js"></script>
 </body>
 </html>
