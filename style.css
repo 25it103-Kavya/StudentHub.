@@ -1,3 +1,81 @@
+/* ==========================================================================
+   Global & Light/Dark Theme Variables
+   ========================================================================== */
+:root {
+  /* Light Theme (Your original teal palette) */
+  --bg-main: #f5fcfd;
+  --text-main: #164044;
+  --text-muted: #41666A;
+  
+  --nav-bg: #0FA4AF;
+  --nav-text: #ffffff;
+  --nav-hover: #AFDDE5;
+  
+  --hero-bg: linear-gradient(135deg, #0FA4AF, #0B6E75);
+  --hero-text: #ffffff;
+  
+  --card-bg: #ffffff;
+  --card-border: #AFDDE5;
+  --card-shadow: 0 4px 14px #0B6E751C;
+  
+  --heading-color: #0B6E75;
+  --title-bg: #AFDDE5;
+  
+  --input-bg: #FAFFFF;
+  --input-border: #0B6E75;
+  --input-focus: #AFDDE5;
+  
+  --stat-bg: #AFDDE5;
+  --stat-border: #0B6E75;
+  
+  --table-bg: #ffffff;
+  --table-border: #0B6E75;
+  --table-even: #F0FBFC;
+  --table-hover: #AFDDE5;
+  
+  --footer-bg: #0B6E75;
+  --footer-text: #ffffff;
+}
+
+[data-theme="dark"] {
+  /* Dark Theme */
+  --bg-main: #12181b;
+  --text-main: #e0e6ed;
+  --text-muted: #9fb3c8;
+  
+  --nav-bg: #1b2830;
+  --nav-text: #ffffff;
+  --nav-hover: #38bec9;
+  
+  --hero-bg: linear-gradient(135deg, #1b2830, #0f171c);
+  --hero-text: #ffffff;
+  
+  --card-bg: #1e293b;
+  --card-border: #334155;
+  --card-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  
+  --heading-color: #38bec9;
+  --title-bg: #1e293b;
+  
+  --input-bg: #0f172a;
+  --input-border: #334155;
+  --input-focus: #38bec9;
+  
+  --stat-bg: #1e293b;
+  --stat-border: #38bec9;
+  
+  --table-bg: #1e293b;
+  --table-border: #334155;
+  --table-even: #0f172a;
+  --table-hover: #334155;
+  
+  --footer-bg: #0f171c;
+  --footer-text: #ffffff;
+}
+
+/* ==========================================================================
+   Base Styles
+   ========================================================================== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,13 +84,14 @@
 
 body {
   font-family: Arial, sans-serif;
-  background: #f5fcfd;
-  color: #164044;
+  background: var(--bg-main);
+  color: var(--text-main);
   line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 nav {
-  background: #0FA4AF;
+  background: var(--nav-bg);
   padding: 18px 7%;
   display: flex;
   justify-content: space-between;
@@ -21,29 +100,51 @@ nav {
 }
 
 nav a {
-  color: white;
+  color: var(--nav-text);
   text-decoration: none;
   margin: 0 8px;
   font-weight: 500;
 }
 
 nav a:hover {
-  color: #AFDDE5;
+  color: var(--nav-hover);
 }
 
 .brand {
   font-size: 23px;
   font-weight: bold;
+  color: var(--nav-text);
 }
 
 .brand span {
-  color: #AFDDE5;
+  color: var(--nav-hover);
 }
 
+/* --- Theme Toggle Button --- */
+#themeBtn, #theme-toggle {
+  background: transparent;
+  color: var(--nav-text);
+  border: 1px solid var(--nav-hover);
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+#themeBtn:hover, #theme-toggle:hover {
+  background: var(--nav-hover);
+  color: var(--heading-color);
+}
+
+/* ==========================================================================
+   Hero & Layout Sections
+   ========================================================================== */
 .hero {
   padding: 100px 7%;
-  background: linear-gradient(135deg, #0FA4AF, #0B6E75);
-  color: white;
+  background: var(--hero-bg);
+  color: var(--hero-text);
 }
 
 .hero h1 {
@@ -70,7 +171,7 @@ nav a:hover {
 
 .section h1,
 .section h2 {
-  color: #0B6E75;
+  color: var(--heading-color);
   margin-bottom: 15px;
 }
 
@@ -81,24 +182,27 @@ nav a:hover {
   margin-top: 25px;
 }
 
+/* Cards & Forms */
 .card,
 form {
-  background: white;
+  background: var(--card-bg);
   padding: 25px;
   border-radius: 12px;
-  border: 1px solid #AFDDE5;
-  box-shadow: 0 4px 14px #0B6E751C;
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .card h3 {
-  color: #0B6E75;
+  color: var(--heading-color);
   margin-bottom: 10px;
 }
 
 .card p {
-  color: #41666A;
+  color: var(--text-muted);
 }
 
+/* Buttons */
 .btn {
   display: inline-block;
   background: #0FA4AF;
@@ -117,21 +221,22 @@ form {
 }
 
 .btn-light {
-  background: #AFDDE5;
-  color: #0B6E75;
-  border-color: #AFDDE5;
+  background: var(--title-bg);
+  color: var(--heading-color);
+  border-color: var(--title-bg);
 }
 
 .btn-light:hover {
-  background: white;
-  color: #0B6E75;
+  background: var(--card-bg);
+  color: var(--heading-color);
 }
 
+/* Titles & Forms */
 .title {
   text-align: center;
-  background: #AFDDE5;
+  background: var(--title-bg);
   padding: 45px 20px;
-  color: #0B6E75;
+  color: var(--heading-color);
 }
 
 .title h1 {
@@ -145,7 +250,7 @@ form {
 }
 
 .form-card h2 {
-  color: #0B6E75;
+  color: var(--heading-color);
   margin-bottom: 20px;
 }
 
@@ -155,7 +260,7 @@ form {
 
 .field label {
   display: block;
-  color: #0B6E75;
+  color: var(--heading-color);
   font-weight: bold;
   margin-bottom: 6px;
 }
@@ -165,18 +270,18 @@ form {
 .field textarea {
   width: 100%;
   padding: 12px;
-  border: 1px solid #0B6E75;
+  border: 1px solid var(--input-border);
   border-radius: 6px;
   font-family: Arial, sans-serif;
   font-size: 15px;
-  color: #164044;
-  background: #FAFFFF;
+  color: var(--text-main);
+  background: var(--input-bg);
 }
 
 .field input:focus,
 .field select:focus,
 .field textarea:focus {
-  outline: 3px solid #AFDDE5;
+  outline: 3px solid var(--input-focus);
   border-color: #0FA4AF;
 }
 
@@ -185,6 +290,7 @@ form {
   resize: vertical;
 }
 
+/* Stats */
 .stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -193,70 +299,73 @@ form {
 }
 
 .stat {
-  background: #AFDDE5;
+  background: var(--stat-bg);
   padding: 25px;
   text-align: center;
   border-radius: 12px;
-  border: 2px solid #0B6E75;
-  box-shadow: 0 4px 12px #0B6E7522;
+  border: 2px solid var(--stat-border);
+  box-shadow: var(--card-shadow);
 }
 
 .stat h2 {
-  color: #0B6E75;
+  color: var(--heading-color);
   font-size: 34px;
   margin-bottom: 5px;
 }
 
 .stat p {
-  color: #164044;
+  color: var(--text-main);
   font-weight: bold;
 }
 
+/* Tables */
 table {
   width: 100%;
-  background: white;
+  background: var(--table-bg);
   border-collapse: collapse;
   margin-top: 25px;
-  border: 2px solid #0B6E75;
-  box-shadow: 0 4px 14px #0B6E7522;
+  border: 2px solid var(--table-border);
+  box-shadow: var(--card-shadow);
 }
 
 th,
 td {
   padding: 14px;
   text-align: left;
-  border: 1px solid #0B6E75;
+  border: 1px solid var(--table-border);
 }
 
 th {
-  background: #0FA4AF;
-  color: white;
+  background: var(--nav-bg);
+  color: var(--nav-text);
 }
 
 tr:nth-child(even) {
-  background: #F0FBFC;
+  background: var(--table-even);
 }
 
 tr:hover {
-  background: #AFDDE5;
+  background: var(--table-hover);
 }
 
+/* Footer & Links */
 .footer {
-  background: #0B6E75;
-  color: white;
+  background: var(--footer-bg);
+  color: var(--footer-text);
   text-align: center;
   padding: 25px;
   margin-top: 50px;
 }
 
 a {
-  color: #0B6E75;
+  color: var(--heading-color);
 }
 
 a:hover {
   color: #0FA4AF;
 }
 
+/* Responsive Styles */
 @media (max-width: 650px) {
   nav {
     display: block;

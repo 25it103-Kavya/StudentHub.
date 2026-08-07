@@ -49,23 +49,28 @@ document.addEventListener("DOMContentLoaded", function () {
     };
   }
 
-  // Theme button
-  const themeButton = document.getElementById("themeBtn");
+  // --- Persistent Light / Dark Theme Logic ---
+  const themeToggleBtn = document.getElementById("themeBtn") || document.getElementById("theme-toggle");
 
-  if (themeButton) {
-    themeButton.onclick = function () {
-      const darkMode =
-        document.body.style.backgroundColor === "black";
+  function applyTheme(theme) {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
 
-      if (darkMode) {
-        document.body.style.backgroundColor = "white";
-        document.body.style.color = "black";
-        themeButton.innerHTML = "Dark Mode";
-      } else {
-        document.body.style.backgroundColor = "black";
-        document.body.style.color = "white";
-        themeButton.innerHTML = "Light Mode";
-      }
+    if (themeToggleBtn) {
+      themeToggleBtn.innerHTML = theme === "dark" ? "☀️ Light Mode" : "🌙 Dark Mode";
+    }
+  }
+
+  // Load saved theme from previous page views or default to light
+  const savedTheme = localStorage.getItem("theme") || "light";
+  applyTheme(savedTheme);
+
+  // Toggle theme on button click
+  if (themeToggleBtn) {
+    themeToggleBtn.onclick = function () {
+      const currentTheme = document.documentElement.getAttribute("data-theme");
+      const newTheme = currentTheme === "dark" ? "light" : "dark";
+      applyTheme(newTheme);
     };
   }
 });
