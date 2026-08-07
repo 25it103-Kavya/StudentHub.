@@ -138,6 +138,45 @@ nav a:hover {
   color: var(--heading-color);
 }
 
+/* --- Popup Banner Styling --- */
+.popup-banner {
+  background-color: var(--title-bg);
+  color: var(--heading-color);
+  border: 1px solid var(--card-border);
+  padding: 14px 20px;
+  margin: 20px auto 0 auto;
+  width: 86%;
+  max-width: 1100px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--card-shadow);
+  transition: opacity 0.3s ease;
+}
+
+.popup-banner span {
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.popup-close-btn {
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--heading-color);
+  cursor: pointer;
+  padding: 0 8px;
+  margin-left: 15px;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.popup-close-btn:hover {
+  color: #ff4d4d;
+}
+
 /* ==========================================================================
    Hero & Layout Sections
    ========================================================================== */

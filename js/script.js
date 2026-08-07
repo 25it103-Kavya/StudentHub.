@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
   }
 
-  // Notification close button
+  // Notification / General close button
   const notification = document.getElementById("notification");
   const closeButton = document.getElementById("closeBtn");
 
@@ -47,6 +47,22 @@ document.addEventListener("DOMContentLoaded", function () {
     closeButton.onclick = function () {
       notification.style.display = "none";
     };
+  }
+
+  // --- Popup Banner Close Logic ---
+  const popupBanner = document.getElementById("popupBanner");
+  const closePopupBtn = document.getElementById("closePopupBtn");
+
+  if (popupBanner && closePopupBtn) {
+    closePopupBtn.onclick = function () {
+      popupBanner.style.display = "none";
+    };
+  }
+
+  // --- Dynamic Year in Footer ---
+  const yearSpan = document.getElementById("year");
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
   }
 
   // --- Persistent Light / Dark Theme Logic ---
