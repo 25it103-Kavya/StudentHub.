@@ -1,5 +1,11 @@
-```javascript
+
+
 document.addEventListener("DOMContentLoaded", function () {
+
+    // =========================================================
+    // STUDENTHUB JAVASCRIPT
+    // =========================================================
+
 
     // =========================================================
     // IMAGE SLIDER
@@ -23,14 +29,13 @@ document.addEventListener("DOMContentLoaded", function () {
         "Student Hub Portal"
     ];
 
-    const sliderDots =
-        document.querySelectorAll(".slider-dot");
+    const sliderDots = document.querySelectorAll(".slider-dot");
 
     let currentImage = 0;
 
 
     // =========================================================
-    // SHOW IMAGE
+    // SHOW SLIDER IMAGE
     // =========================================================
 
     function showImage(index) {
@@ -39,23 +44,28 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        sliderImage.src = sliderImages[index];
+        if (index < 0) {
+            index = sliderImages.length - 1;
+        }
 
-        sliderImage.alt = sliderAltText[index];
+        if (index >= sliderImages.length) {
+            index = 0;
+        }
+
+        currentImage = index;
+
+        sliderImage.src = sliderImages[currentImage];
+        sliderImage.alt = sliderAltText[currentImage];
 
 
-        // Update dots
+        // Update slider dots
 
         sliderDots.forEach(function (dot, i) {
 
-            if (i === index) {
-
+            if (i === currentImage) {
                 dot.classList.add("active");
-
             } else {
-
                 dot.classList.remove("active");
-
             }
 
         });
@@ -64,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // =========================================================
-    // PREVIOUS
+    // PREVIOUS BUTTON
     // =========================================================
 
     if (prevBtn) {
@@ -74,10 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
             currentImage--;
 
             if (currentImage < 0) {
-
-                currentImage =
-                    sliderImages.length - 1;
-
+                currentImage = sliderImages.length - 1;
             }
 
             showImage(currentImage);
@@ -88,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // =========================================================
-    // NEXT
+    // NEXT BUTTON
     // =========================================================
 
     if (nextBtn) {
@@ -98,9 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
             currentImage++;
 
             if (currentImage >= sliderImages.length) {
-
                 currentImage = 0;
-
             }
 
             showImage(currentImage);
@@ -121,9 +126,9 @@ document.addEventListener("DOMContentLoaded", function () {
             const slide =
                 Number(dot.getAttribute("data-slide"));
 
-            currentImage = slide;
-
-            showImage(currentImage);
+            if (!isNaN(slide)) {
+                showImage(slide);
+            }
 
         });
 
@@ -132,7 +137,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Show first image
 
-    showImage(currentImage);
+    if (sliderImage) {
+        showImage(currentImage);
+    }
 
 
     // =========================================================
@@ -142,8 +149,8 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Welcome to StudentHub");
     console.log("Practical 4");
 
-    let studentName = "Kavya";
-    let course = "Information Technology";
+    const studentName = "Kavya";
+    const course = "Information Technology";
 
     console.log(studentName);
     console.log(course);
@@ -153,11 +160,11 @@ document.addEventListener("DOMContentLoaded", function () {
     // DATA TYPES
     // =========================================================
 
-    let college = "CHARUSAT";
-    let year = 2026;
+    const college = "CHARUSAT";
+    const currentYear = 2026;
 
     console.log(college);
-    console.log(year);
+    console.log(currentYear);
 
 
     // =========================================================
@@ -199,15 +206,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (headingButton && heading) {
 
-        headingButton.addEventListener(
-            "click",
-            function () {
+        headingButton.addEventListener("click", function () {
 
-                heading.innerHTML =
-                    "Welcome to StudentHub";
+            heading.textContent =
+                "Welcome to StudentHub";
 
-            }
-        );
+        });
 
     }
 
@@ -225,14 +229,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (closeAlert && alertBox) {
 
-        closeAlert.addEventListener(
-            "click",
-            function () {
+        closeAlert.addEventListener("click", function () {
 
-                alertBox.style.display = "none";
+            alertBox.style.display = "none";
 
-            }
-        );
+        });
 
     }
 
@@ -255,20 +256,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // =========================================================
     // DARK / LIGHT MODE
+    // WORKS ON ALL PAGES
     // =========================================================
 
-    const darkModeButtons =
-        document.querySelectorAll(
-            "#darkModeBtn, #themeBtn"
-        );
+    const themeButtons = document.querySelectorAll(
+        "#darkModeBtn, #themeBtn, .dark-mode-btn"
+    );
 
+
+    // ---------------------------------------------------------
+    // APPLY THEME
+    // ---------------------------------------------------------
 
     function applyTheme(theme) {
+
+        // Set theme on HTML element
 
         document.documentElement.setAttribute(
             "data-theme",
             theme
         );
+
+
+        // Save theme
 
         localStorage.setItem(
             "theme",
@@ -276,17 +286,29 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-        darkModeButtons.forEach(function (button) {
+        // Change button text
+
+        themeButtons.forEach(function (button) {
 
             if (theme === "dark") {
 
-                button.innerHTML =
+                button.textContent =
                     "☀️ Light Mode";
+
+                button.setAttribute(
+                    "aria-label",
+                    "Switch to light mode"
+                );
 
             } else {
 
-                button.innerHTML =
+                button.textContent =
                     "🌙 Dark Mode";
+
+                button.setAttribute(
+                    "aria-label",
+                    "Switch to dark mode"
+                );
 
             }
 
@@ -295,35 +317,52 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    // Load saved theme
+    // ---------------------------------------------------------
+    // LOAD SAVED THEME
+    // ---------------------------------------------------------
 
-    const savedTheme =
-        localStorage.getItem("theme") || "light";
+    let savedTheme =
+        localStorage.getItem("theme");
+
+
+    if (
+        savedTheme !== "dark" &&
+        savedTheme !== "light"
+    ) {
+
+        savedTheme = "light";
+
+    }
+
 
     applyTheme(savedTheme);
 
 
-    // Theme buttons
+    // ---------------------------------------------------------
+    // DARK / LIGHT BUTTON CLICK
+    // ---------------------------------------------------------
 
-    darkModeButtons.forEach(function (button) {
+    themeButtons.forEach(function (button) {
 
-        button.addEventListener(
-            "click",
-            function () {
+        button.addEventListener("click", function () {
 
-                const currentTheme =
-                    document.documentElement
-                        .getAttribute("data-theme");
+            const currentTheme =
+                document.documentElement.getAttribute(
+                    "data-theme"
+                );
 
-                const newTheme =
-                    currentTheme === "dark"
-                        ? "light"
-                        : "dark";
 
-                applyTheme(newTheme);
+            if (currentTheme === "dark") {
+
+                applyTheme("light");
+
+            } else {
+
+                applyTheme("dark");
 
             }
-        );
+
+        });
 
     });
 
@@ -341,49 +380,50 @@ document.addEventListener("DOMContentLoaded", function () {
 
     filterButtons.forEach(function (button) {
 
-        button.addEventListener(
-            "click",
-            function () {
+        button.addEventListener("click", function () {
 
-                const filter =
-                    button.getAttribute("data-filter");
+            const filter =
+                button.getAttribute("data-filter");
 
 
-                filterButtons.forEach(
-                    function (btn) {
+            // Remove active class
 
-                        btn.classList.remove("active");
+            filterButtons.forEach(function (btn) {
 
-                    }
-                );
+                btn.classList.remove("active");
 
-
-                button.classList.add("active");
+            });
 
 
-                cards.forEach(function (card) {
+            // Add active class
 
-                    const category =
-                        card.getAttribute("data-category");
+            button.classList.add("active");
 
 
-                    if (
-                        filter === "all" ||
-                        category === filter
-                    ) {
+            // Filter cards
 
-                        card.style.display = "block";
+            cards.forEach(function (card) {
 
-                    } else {
+                const category =
+                    card.getAttribute("data-category");
 
-                        card.style.display = "none";
 
-                    }
+                if (
+                    filter === "all" ||
+                    category === filter
+                ) {
 
-                });
+                    card.style.display = "";
 
-            }
-        );
+                } else {
+
+                    card.style.display = "none";
+
+                }
+
+            });
+
+        });
 
     });
 
@@ -393,17 +433,20 @@ document.addEventListener("DOMContentLoaded", function () {
     // =========================================================
 
     const eventButtons =
-        document.querySelectorAll(".event-register");
+        document.querySelectorAll(
+            ".event-register"
+        );
 
 
     eventButtons.forEach(function (button) {
 
-        button.addEventListener(
-            "click",
-            function () {
+        button.addEventListener("click", function () {
 
-                const eventName =
-                    button.getAttribute("data-event");
+            const eventName =
+                button.getAttribute("data-event");
+
+
+            if (eventName) {
 
                 alert(
                     "Successfully registered for " +
@@ -411,8 +454,15 @@ document.addEventListener("DOMContentLoaded", function () {
                     "!"
                 );
 
+            } else {
+
+                alert(
+                    "Successfully registered for the event!"
+                );
+
             }
-        );
+
+        });
 
     });
 
@@ -433,9 +483,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 event.preventDefault();
 
+
                 alert(
                     "Your message was sent successfully!"
                 );
+
 
                 contactForm.reset();
 
@@ -461,16 +513,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 event.preventDefault();
 
-                const email =
+
+                const emailInput =
                     document.getElementById(
                         "loginEmail"
-                    ).value.trim();
+                    );
 
-                const password =
+                const passwordInput =
                     document.getElementById(
                         "loginPassword"
-                    ).value;
+                    );
 
+
+                const email =
+                    emailInput
+                        ? emailInput.value.trim()
+                        : "";
+
+                const password =
+                    passwordInput
+                        ? passwordInput.value
+                        : "";
+
+
+                // Check empty fields
 
                 if (
                     email === "" ||
@@ -485,6 +551,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 }
 
+
+                // Login success
 
                 alert(
                     "Login successful! Welcome to StudentHub."
@@ -508,4 +576,3 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 });
-```

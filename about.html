@@ -1,307 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About | StudentHub</title>
-  <style>
-    /* CSS Variables for Dynamic Light/Dark Theme */
-    :root {
-      --bg-color: #f4fbfb;
-      --text-color: #333333;
-      --hero-bg: #bce9f0;
-      --hero-title: #0f8a8c;
-      --hero-text: #1a6264;
-      --card-bg: #ffffff;
-      --card-border: #e1f3f5;
-      --card-title: #0f8a8c;
-      --card-p-color: #555555;
-      --stat-bg: #f0f9fa;
-      --stat-border: #d3f0f3;
-    }
 
-    /* Dark Theme Variable Overrides */
-    [data-theme="dark"] {
-      --bg-color: #121e24;
-      --text-color: #e0f2f1;
-      --hero-bg: #163238;
-      --hero-title: #4dd0e1;
-      --hero-text: #b2ebf2;
-      --card-bg: #1a2930;
-      --card-border: #263d47;
-      --card-title: #26a69a;
-      --card-p-color: #b0bec5;
-      --stat-bg: #1e3038;
-      --stat-border: #2c4754;
-    }
+    <meta charset="UTF-8">
 
-    /* Global Reset & Base Styles */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-    }
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-    body {
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
+    <title>About | StudentHub</title>
 
-    /* Navbar */
-    header {
-      background-color: #0f8a8c;
-      padding: 15px 50px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
+    <!-- Main Website CSS -->
+    <link rel="stylesheet" href="style.css">
 
-    .dark-mode-btn {
-      background-color: transparent;
-      border: 1.5px solid #ffffff;
-      color: #ffffff;
-      padding: 6px 16px;
-      border-radius: 20px;
-      cursor: pointer;
-      font-weight: 500;
-      transition: all 0.3s ease;
-    }
-
-    .dark-mode-btn:hover {
-      background-color: #ffffff;
-      color: #0f8a8c;
-    }
-
-    .logo {
-      color: #ffffff;
-      font-size: 1.8rem;
-      font-weight: 700;
-    }
-
-    .logo span {
-      font-weight: 300;
-    }
-
-    nav a {
-      color: #ffffff;
-      text-decoration: none;
-      margin-left: 20px;
-      font-size: 1rem;
-      transition: opacity 0.2s;
-    }
-
-    nav a:hover, nav a.active {
-      opacity: 0.8;
-      text-decoration: underline;
-    }
-
-    /* Hero Section */
-    .hero {
-      background-color: var(--hero-bg);
-      text-align: center;
-      padding: 60px 20px;
-    }
-
-    .hero h1 {
-      color: var(--hero-title);
-      font-size: 2.8rem;
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      color: var(--hero-text);
-      font-size: 1.2rem;
-    }
-
-    /* Main Content Container */
-    .content-container {
-      max-width: 1000px;
-      margin: -30px auto 50px auto;
-      padding: 0 20px;
-      flex: 1;
-    }
-
-    /* Feature Cards */
-    .card {
-      background: var(--card-bg);
-      border-radius: 12px;
-      padding: 35px;
-      margin-bottom: 25px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-      border: 1px solid var(--card-border);
-    }
-
-    .card h2 {
-      color: var(--card-title);
-      font-size: 1.6rem;
-      margin-bottom: 12px;
-    }
-
-    .card p {
-      color: var(--card-p-color);
-      line-height: 1.6;
-      font-size: 1rem;
-    }
-
-    /* Grid Layout for Vision & Features */
-    .grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-
-    /* Stats Banner */
-    .stats-container {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
-      text-align: center;
-      margin-top: 10px;
-    }
-
-    .stat-box {
-      background-color: var(--stat-bg);
-      padding: 20px;
-      border-radius: 8px;
-      border: 1px solid var(--stat-border);
-    }
-
-    .stat-box h3 {
-      color: var(--card-title);
-      font-size: 1.8rem;
-      margin-bottom: 5px;
-    }
-
-    .stat-box p {
-      color: var(--card-p-color);
-      font-size: 0.9rem;
-    }
-
-    /* Footer */
-    footer {
-      background-color: #0f8a8c;
-      color: #ffffff;
-      text-align: center;
-      padding: 20px;
-      margin-top: auto;
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 768px) {
-      .grid-2, .stats-container {
-        grid-template-columns: 1fr;
-      }
-      header {
-        flex-direction: column;
-        gap: 15px;
-      }
-    }
-  </style>
 </head>
+
+
 <body>
 
-  <header>
-    <button class="dark-mode-btn" id="themeToggleBtn" onclick="toggleTheme()">🌙 Dark Mode</button>
-    <div class="logo">Student<span>Hub</span></div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html" class="active">About</a>
-      <a href="events.html">Events</a>
-      <a href="contact.html">Contact</a>
-      <a href="login.html">Login</a>
-    </nav>
-  </header>
 
-  <section class="hero">
-    <h1>Empowering Campus Connection</h1>
-    <p>Bridging students, events, and opportunities into one seamlessly integrated platform.</p>
-  </section>
+<!-- =========================================================
+     HEADER
+========================================================= -->
 
-  <div class="content-container">
+<header class="header">
 
-    <div class="card">
-      <h2>Our Mission</h2>
-      <p>
-        StudentHub was designed to streamline academic life and vibrant campus culture into a unified digital experience. We empower students to effortlessly access academic announcements, manage profiles, discover interactive campus events, and collaborate directly with peers and organizations.
-      </p>
+    <div class="container">
+
+
+        <!-- Dark / Light Mode Button -->
+
+        <button
+            id="darkModeBtn"
+            class="dark-mode-btn"
+            type="button"
+            aria-label="Toggle dark mode">
+
+            🌙 Dark Mode
+
+        </button>
+
+
+        <!-- Logo -->
+
+        <h2 class="logo">
+            StudentHub
+        </h2>
+
+
+        <!-- Navigation -->
+
+        <nav
+            class="nav"
+            aria-label="Main navigation">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="events.html">
+                Events
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+            <a href="login.html">
+                Login
+            </a>
+
+        </nav>
+
     </div>
 
-    <div class="grid-2">
-      <div class="card">
-        <h2>Our Vision</h2>
-        <p>
-          To build an interconnected and engaging university ecosystem where every student stays informed, active, and supported throughout their academic journey.
-        </p>
-      </div>
-      <div class="card">
-        <h2>Why StudentHub?</h2>
-        <p>
-          Say goodbye to cluttered email threads and scattered bulletin boards. StudentHub centralizes your essential campus activities into one intuitive dashboard.
-        </p>
-      </div>
+</header>
+
+
+
+<!-- =========================================================
+     ABOUT HERO
+========================================================= -->
+
+<section class="hero">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <h1>
+                About StudentHub
+            </h1>
+
+            <p>
+                Connecting students, academics and campus life
+                in one simple digital platform.
+            </p>
+
+        </div>
+
     </div>
 
-    <div class="card">
-      <h2>StudentHub At A Glance</h2>
-      <div class="stats-container">
-        <div class="stat-box">
-          <h3>Centralized</h3>
-          <p>All updates in one place</p>
+</section>
+
+
+
+<!-- =========================================================
+     ABOUT CONTENT
+========================================================= -->
+
+<main class="section">
+
+    <div class="container">
+
+
+        <!-- =================================================
+             OUR MISSION
+        ================================================== -->
+
+        <div class="card">
+
+            <h3>
+                Our Mission
+            </h3>
+
+            <p>
+                StudentHub was designed to streamline academic
+                life and vibrant campus culture into a unified
+                digital experience. We empower students to
+                effortlessly access academic announcements,
+                manage profiles, discover interactive campus
+                events, and collaborate directly with peers
+                and organizations.
+            </p>
+
         </div>
-        <div class="stat-box">
-          <h3>Interactive</h3>
-          <p>Easy event participation</p>
+
+
+
+        <!-- =================================================
+             VISION + WHY STUDENTHUB
+        ================================================== -->
+
+        <div class="grid-2">
+
+
+            <!-- Vision -->
+
+            <div class="card">
+
+                <h3>
+                    Our Vision
+                </h3>
+
+                <p>
+                    To build an interconnected and engaging
+                    university ecosystem where every student
+                    stays informed, active, and supported
+                    throughout their academic journey.
+                </p>
+
+            </div>
+
+
+            <!-- Why StudentHub -->
+
+            <div class="card">
+
+                <h3>
+                    Why StudentHub?
+                </h3>
+
+                <p>
+                    Say goodbye to cluttered email threads and
+                    scattered bulletin boards. StudentHub
+                    centralizes your essential campus activities
+                    into one intuitive dashboard.
+                </p>
+
+            </div>
+
+
         </div>
-        <div class="stat-box">
-          <h3>Connected</h3>
-          <p>Direct peer communication</p>
+
+
+
+        <!-- =================================================
+             STUDENTHUB AT A GLANCE
+        ================================================== -->
+
+        <div class="card">
+
+            <h3>
+                StudentHub At A Glance
+            </h3>
+
+
+            <div class="stats-container">
+
+
+                <!-- Centralized -->
+
+                <div class="stat-box">
+
+                    <h3>
+                        Centralized
+                    </h3>
+
+                    <p>
+                        All updates in one place
+                    </p>
+
+                </div>
+
+
+                <!-- Interactive -->
+
+                <div class="stat-box">
+
+                    <h3>
+                        Interactive
+                    </h3>
+
+                    <p>
+                        Easy event participation
+                    </p>
+
+                </div>
+
+
+                <!-- Connected -->
+
+                <div class="stat-box">
+
+                    <h3>
+                        Connected
+                    </h3>
+
+                    <p>
+                        Direct peer communication
+                    </p>
+
+                </div>
+
+
+            </div>
+
         </div>
-      </div>
+
+
     </div>
 
-  </div>
+</main>
 
-  <footer>
-    &copy; 2026 StudentHub Portal. All rights reserved.
-  </footer>
 
-  <script>
-    // Function to toggle theme and persist in localStorage
-    function toggleTheme() {
-      const currentTheme = document.documentElement.getAttribute("data-theme");
-      const btn = document.getElementById("themeToggleBtn");
 
-      if (currentTheme === "dark") {
-        document.documentElement.setAttribute("data-theme", "light");
-        localStorage.setItem("theme", "light");
-        btn.innerHTML = "🌙 Dark Mode";
-      } else {
-        document.documentElement.setAttribute("data-theme", "dark");
-        localStorage.setItem("theme", "dark");
-        btn.innerHTML = "☀️ Light Mode";
-      }
-    }
+<!-- =========================================================
+     FOOTER
+========================================================= -->
 
-    // Initialize theme based on user's previous selection
-    (function initTheme() {
-      const savedTheme = localStorage.getItem("theme");
-      const btn = document.getElementById("themeToggleBtn");
+<footer class="footer">
 
-      if (savedTheme === "dark") {
-        document.documentElement.setAttribute("data-theme", "dark");
-        if (btn) btn.innerHTML = "☀️ Light Mode";
-      } else {
-        document.documentElement.setAttribute("data-theme", "light");
-        if (btn) btn.innerHTML = "🌙 Dark Mode";
-      }
-    })();
-  </script>
+    <p>
+
+        © <span id="year"></span>
+        StudentHub Portal
+
+    </p>
+
+</footer>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script src="js/script.js"></script>
+
 
 </body>
+
 </html>
