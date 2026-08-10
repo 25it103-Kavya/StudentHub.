@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,190 +9,240 @@
 
     <title>Contact | StudentHub</title>
 
+    <!-- IMPORTANT: CSS file -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- =====================================================
-     HEADER
-====================================================== -->
+    <!-- ================= HEADER ================= -->
 
-<header class="header">
+    <header class="header">
 
-    <div class="container">
+        <div class="container">
 
-        <button
-            id="darkModeBtn"
-            class="dark-mode-btn"
-            type="button">
+            <button
+                id="darkModeBtn"
+                class="dark-mode-btn"
+                type="button">
+                🌙 Dark Mode
+            </button>
 
-            🌙 Dark Mode
+            <a href="index.html" class="brand">
+                StudentHub
+            </a>
 
-        </button>
+            <nav class="nav">
 
-        <h2 class="logo">
-            StudentHub
-        </h2>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="events.html">Events</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html">Login</a>
 
-        <nav class="nav"
-             aria-label="Main navigation">
-
-            <a href="index.html">Home</a>
-
-            <a href="about.html">About</a>
-
-            <a href="events.html">Events</a>
-
-            <a href="contact.html">Contact</a>
-
-            <a href="login.html">Login</a>
-
-        </nav>
-
-    </div>
-
-</header>
-
-
-<!-- =====================================================
-     CONTACT SECTION
-====================================================== -->
-
-<main class="container">
-
-    <div class="contact-wrapper">
-
-        <!-- CONTACT INFORMATION -->
-
-        <div class="contact-info">
-
-            <h2>Get in Touch</h2>
-
-            <p>
-                Have a question or suggestion?
-                We would love to hear from you.
-            </p>
-
-            <p>
-                <strong>📧 Email:</strong><br>
-                studenthub@charusat.ac.in
-            </p>
-
-            <p>
-                <strong>📞 Phone:</strong><br>
-                +91 12345 67890
-            </p>
-
-            <p>
-                <strong>📍 Location:</strong><br>
-                CHARUSAT University, Changa, Gujarat
-            </p>
+            </nav>
 
         </div>
 
+    </header>
 
-        <!-- CONTACT FORM -->
 
-        <form
-            class="form-card"
-            id="contactForm">
+    <!-- ================= CONTACT PAGE ================= -->
 
-            <h2>Contact Us</h2>
+    <main>
 
-            <div class="field">
+        <section class="section contact-section">
 
-                <label for="contactName">
-                    Name
-                </label>
+            <div class="container">
 
-                <input
-                    type="text"
-                    id="contactName"
-                    name="name"
-                    placeholder="Enter your name"
-                    required>
+                <div class="contact-heading">
+
+                    <h1>Contact Us</h1>
+
+                    <p>
+                        Have a question or suggestion?
+                        We would love to hear from you.
+                    </p>
+
+                </div>
+
+
+                <div class="contact-wrapper">
+
+                    <!-- ===== CONTACT INFORMATION ===== -->
+
+                    <div class="contact-info">
+
+                        <h2>Get in Touch</h2>
+
+                        <p class="contact-description">
+                            Feel free to contact us for any questions,
+                            suggestions, or information about StudentHub.
+                        </p>
+
+
+                        <div class="contact-item">
+
+                            <div class="contact-icon">
+                                📧
+                            </div>
+
+                            <div>
+                                <h3>Email</h3>
+                                <p>
+                                    studenthub@charusat.ac.in
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="contact-item">
+
+                            <div class="contact-icon">
+                                📞
+                            </div>
+
+                            <div>
+                                <h3>Phone</h3>
+                                <p>
+                                    +91 12345 67890
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="contact-item">
+
+                            <div class="contact-icon">
+                                📍
+                            </div>
+
+                            <div>
+                                <h3>Location</h3>
+                                <p>
+                                    CHARUSAT University,
+                                    Changa, Gujarat
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ===== CONTACT FORM ===== -->
+
+                    <form
+                        class="contact-form"
+                        id="contactForm">
+
+                        <h2>Send Us a Message</h2>
+
+                        <p class="form-description">
+                            Fill out the form below and we will get
+                            back to you soon.
+                        </p>
+
+
+                        <div class="field">
+
+                            <label for="contactName">
+                                Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="contactName"
+                                name="name"
+                                placeholder="Enter your name"
+                                required>
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label for="contactEmail">
+                                Email
+                            </label>
+
+                            <input
+                                type="email"
+                                id="contactEmail"
+                                name="email"
+                                placeholder="Enter your email"
+                                required>
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label for="contactSubject">
+                                Subject
+                            </label>
+
+                            <input
+                                type="text"
+                                id="contactSubject"
+                                name="subject"
+                                placeholder="Enter subject"
+                                required>
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label for="contactMessage">
+                                Message
+                            </label>
+
+                            <textarea
+                                id="contactMessage"
+                                name="message"
+                                placeholder="Write your message here..."
+                                required></textarea>
+
+                        </div>
+
+
+                        <button
+                            class="btn contact-submit"
+                            type="submit">
+
+                            Send Message
+
+                        </button>
+
+                    </form>
+
+                </div>
 
             </div>
 
+        </section>
 
-            <div class="field">
-
-                <label for="contactEmail">
-                    Email
-                </label>
-
-                <input
-                    type="email"
-                    id="contactEmail"
-                    name="email"
-                    placeholder="Enter your email"
-                    required>
-
-            </div>
+    </main>
 
 
-            <div class="field">
+    <!-- ================= FOOTER ================= -->
 
-                <label for="contactSubject">
-                    Subject
-                </label>
+    <footer class="footer">
 
-                <input
-                    type="text"
-                    id="contactSubject"
-                    name="subject"
-                    placeholder="Enter subject"
-                    required>
+        <p>
+            © <span id="year"></span> StudentHub Portal
+        </p>
 
-            </div>
+    </footer>
 
 
-            <div class="field">
+    <!-- ================= JAVASCRIPT ================= -->
 
-                <label for="contactMessage">
-                    Message
-                </label>
-
-                <textarea
-                    id="contactMessage"
-                    name="message"
-                    placeholder="Write your message here..."
-                    required></textarea>
-
-            </div>
-
-
-            <button
-                class="btn"
-                type="submit">
-
-                Send Message
-
-            </button>
-
-        </form>
-
-    </div>
-
-</main>
-
-
-<!-- =====================================================
-     FOOTER
-====================================================== -->
-
-<footer class="footer">
-
-    <p>
-        © <span id="year"></span> StudentHub Portal
-    </p>
-
-</footer>
-
-
-<script src="js/script.js"></script>
+    <script src="js/script.js"></script>
 
 </body>
+
 </html>
-```
