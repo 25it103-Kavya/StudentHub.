@@ -1,65 +1,217 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Events | StudentHub</title>
-  <link rel="stylesheet" href="style.css">
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Events | StudentHub</title>
+
+    <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
 
-<nav>
-  
-  <button id="themeBtn">🌙 Dark Mode</button>
-  <a class="brand" href="index.html">Student<span>Hub</span></a>
+<!-- =====================================================
+     HEADER
+====================================================== -->
 
-  <div>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="events.html">Events</a>
-    <a href="contact.html">Contact</a>
-    <a href="login.html">Login</a>
-  </div>
-</nav>
+<header class="header">
 
-<section class="section container">
-  <h1>Campus Events</h1>
-  <p>Participate in activities and connect with your college community.</p>
+    <div class="container">
 
-  <div class="grid">
-    <div class="card">
-      <h3>Orientation Day</h3>
-      <p>📅 September 10, 2026</p>
-      <p>📍 Main Auditorium</p>
-      <button class="btn" onclick="alert('Registered for Orientation Day!')">
-        Register
-      </button>
+        <button
+            id="darkModeBtn"
+            class="dark-mode-btn"
+            type="button">
+
+            🌙 Dark Mode
+
+        </button>
+
+        <h2 class="logo">
+            StudentHub
+        </h2>
+
+        <nav class="nav"
+             aria-label="Main navigation">
+
+            <a href="index.html">Home</a>
+
+            <a href="about.html">About</a>
+
+            <a href="events.html">Events</a>
+
+            <a href="contact.html">Contact</a>
+
+            <a href="login.html">Login</a>
+
+        </nav>
+
     </div>
 
-    <div class="card">
-      <h3>Coding Workshop</h3>
-      <p>📅 September 18, 2026</p>
-      <p>📍 Innovation Lab</p>
-      <button class="btn" onclick="alert('Registered for Coding Workshop!')">
-        Register
-      </button>
-    </div>
+</header>
 
-    <div class="card">
-      <h3>Annual Sports Meet</h3>
-      <p>📅 October 02, 2026</p>
-      <p>📍 College Ground</p>
-      <button class="btn" onclick="alert('Registered for Sports Meet!')">
-        Register
-      </button>
-    </div>
-  </div>
-</section>
+
+<!-- =====================================================
+     EVENTS
+====================================================== -->
+
+<main>
+
+    <section class="section container">
+
+        <h1>
+            Campus Events
+        </h1>
+
+        <p>
+            Participate in activities and connect
+            with your college community.
+        </p>
+
+
+        <div class="events-grid">
+
+
+            <!-- EVENT 1 -->
+
+            <div class="event-card">
+
+                <span class="event-date">
+                    September 10, 2026
+                </span>
+
+                <h3>
+                    Orientation Day
+                </h3>
+
+                <p>
+                    📅 September 10, 2026
+                </p>
+
+                <p>
+                    📍 Main Auditorium
+                </p>
+
+                <p>
+                    Welcome new students and discover
+                    everything about campus life.
+                </p>
+
+                <button
+                    class="btn event-register"
+                    type="button"
+                    data-event="Orientation Day">
+
+                    Register
+
+                </button>
+
+            </div>
+
+
+            <!-- EVENT 2 -->
+
+            <div class="event-card">
+
+                <span class="event-date">
+                    September 18, 2026
+                </span>
+
+                <h3>
+                    Coding Workshop
+                </h3>
+
+                <p>
+                    📅 September 18, 2026
+                </p>
+
+                <p>
+                    📍 Innovation Lab
+                </p>
+
+                <p>
+                    Improve your programming skills
+                    through practical coding activities.
+                </p>
+
+                <button
+                    class="btn event-register"
+                    type="button"
+                    data-event="Coding Workshop">
+
+                    Register
+
+                </button>
+
+            </div>
+
+
+            <!-- EVENT 3 -->
+
+            <div class="event-card">
+
+                <span class="event-date">
+                    October 02, 2026
+                </span>
+
+                <h3>
+                    Annual Sports Meet
+                </h3>
+
+                <p>
+                    📅 October 02, 2026
+                </p>
+
+                <p>
+                    📍 College Ground
+                </p>
+
+                <p>
+                    Take part in exciting sports
+                    activities and represent your department.
+                </p>
+
+                <button
+                    class="btn event-register"
+                    type="button"
+                    data-event="Annual Sports Meet">
+
+                    Register
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
 
 <footer class="footer">
-  © <span id="year"></span> StudentHub Portal
+
+    <p>
+        © <span id="year"></span> StudentHub Portal
+    </p>
+
 </footer>
 
+
 <script src="js/script.js"></script>
+
 </body>
 </html>
+```

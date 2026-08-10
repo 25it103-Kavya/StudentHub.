@@ -1,443 +1,1263 @@
-/* ==========================================================================
-   Global & Light/Dark Theme Variables
-   ========================================================================== */
+/* =========================================================
+   STUDENTHUB - COMPLETE WEBSITE STYLE
+   Blue / Teal Theme
+========================================================= */
+
+/* =========================================================
+   1. THEME COLORS
+========================================================= */
+
 :root {
-  /* Light Theme (Your original teal palette) */
-  --bg-main: #f5fcfd;
-  --text-main: #164044;
-  --text-muted: #41666A;
-  
-  --nav-bg: #0FA4AF;
-  --nav-text: #ffffff;
-  --nav-hover: #AFDDE5;
-  
-  --hero-bg: linear-gradient(135deg, #0FA4AF, #0B6E75);
-  --hero-text: #ffffff;
-  
-  --card-bg: #ffffff;
-  --card-border: #AFDDE5;
-  --card-shadow: 0 4px 14px #0B6E751C;
-  
-  --heading-color: #0B6E75;
-  --title-bg: #AFDDE5;
-  
-  --input-bg: #FAFFFF;
-  --input-border: #0B6E75;
-  --input-focus: #AFDDE5;
-  
-  --stat-bg: #AFDDE5;
-  --stat-border: #0B6E75;
-  
-  --table-bg: #ffffff;
-  --table-border: #0B6E75;
-  --table-even: #F0FBFC;
-  --table-hover: #AFDDE5;
-  
-  --footer-bg: #0B6E75;
-  --footer-text: #ffffff;
+    --light-blue: #b9e3e8;
+    --blue: #12a6b2;
+    --dark-blue: #08747b;
+
+    --background: #f4fbfc;
+    --white: #ffffff;
+
+    --text: #214b50;
+    --muted-text: #607d81;
+
+    --border: #b7e1e5;
+
+    --input-background: #ffffff;
+    --input-border: #9ccfd4;
+
+    --header-background: #12a6b2;
+    --footer-background: #08747b;
+
+    --shadow: 0 8px 22px rgba(8, 116, 123, 0.12);
+
+    --transition: 0.3s ease;
 }
 
-[data-theme="dark"] {
-  /* Dark Theme */
-  --bg-main: #12181b;
-  --text-main: #e0e6ed;
-  --text-muted: #9fb3c8;
-  
-  --nav-bg: #1b2830;
-  --nav-text: #ffffff;
-  --nav-hover: #38bec9;
-  
-  --hero-bg: linear-gradient(135deg, #1b2830, #0f171c);
-  --hero-text: #ffffff;
-  
-  --card-bg: #1e293b;
-  --card-border: #334155;
-  --card-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
-  
-  --heading-color: #38bec9;
-  --title-bg: #1e293b;
-  
-  --input-bg: #0f172a;
-  --input-border: #334155;
-  --input-focus: #38bec9;
-  
-  --stat-bg: #1e293b;
-  --stat-border: #38bec9;
-  
-  --table-bg: #1e293b;
-  --table-border: #334155;
-  --table-even: #0f172a;
-  --table-hover: #334155;
-  
-  --footer-bg: #0f171c;
-  --footer-text: #ffffff;
+
+/* =========================================================
+   2. DARK MODE
+========================================================= */
+
+html[data-theme="dark"] {
+    --background: #10191c;
+    --white: #162327;
+
+    --text: #e4f1f3;
+    --muted-text: #a9c1c5;
+
+    --light-blue: #234b50;
+    --blue: #2bb9c4;
+    --dark-blue: #178b95;
+
+    --border: #31555b;
+
+    --input-background: #142226;
+    --input-border: #416970;
+
+    --header-background: #172b30;
+    --footer-background: #0d191c;
+
+    --shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
 }
 
-/* ==========================================================================
-   Base Styles
-   ========================================================================== */
+
+/* =========================================================
+   3. GLOBAL RESET
+========================================================= */
+
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background: var(--bg-main);
-  color: var(--text-main);
-  line-height: 1.6;
-  transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: var(--background);
+    color: var(--text);
+
+    line-height: 1.6;
+
+    min-height: 100vh;
+
+    transition:
+        background-color var(--transition),
+        color var(--transition);
 }
 
-nav {
-  background: var(--nav-bg);
-  padding: 18px 7%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 3px 10px #0B6E7533;
+
+/* =========================================================
+   4. CONTAINER
+========================================================= */
+
+.container {
+    width: 88%;
+    max-width: 1120px;
+
+    margin: 0 auto;
 }
 
-nav a {
-  color: var(--nav-text);
-  text-decoration: none;
-  margin: 0 8px;
-  font-weight: 500;
+
+/* =========================================================
+   5. HEADER
+========================================================= */
+
+.header {
+    width: 100%;
+
+    background: var(--header-background);
+    color: #ffffff;
+
+    box-shadow:
+        0 4px 14px rgba(0, 0, 0, 0.15);
+
+    position: relative;
+    z-index: 1000;
+
+    transition:
+        background-color var(--transition);
 }
 
-nav a:hover {
-  color: var(--nav-hover);
+.header .container {
+    min-height: 78px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   6. LOGO
+========================================================= */
+
+.logo {
+    color: #ffffff;
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.3px;
+
+    white-space: nowrap;
 }
 
 .brand {
-  font-size: 23px;
-  font-weight: bold;
-  color: var(--nav-text);
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 25px;
+
+    font-weight: 700;
 }
 
 .brand span {
-  color: var(--nav-hover);
+    color: #d9ffff;
 }
 
-/* --- Theme Toggle Button --- */
-#themeBtn, #theme-toggle {
-  background: transparent;
-  color: var(--nav-text);
-  border: 1px solid var(--nav-hover);
-  padding: 6px 14px;
-  border-radius: 20px;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 14px;
-  transition: all 0.3s ease;
+
+/* =========================================================
+   7. NAVIGATION
+========================================================= */
+
+.nav {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 6px;
 }
 
-#themeBtn:hover, #theme-toggle:hover {
-  background: var(--nav-hover);
-  color: var(--heading-color);
+.nav a {
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    padding: 9px 13px;
+
+    border-radius: 6px;
+
+    transition:
+        background-color var(--transition),
+        transform var(--transition);
 }
 
-/* --- Popup Banner Styling --- */
-.popup-banner {
-  background-color: var(--title-bg);
-  color: var(--heading-color);
-  border: 1px solid var(--card-border);
-  padding: 14px 20px;
-  margin: 20px auto 0 auto;
-  width: 86%;
-  max-width: 1100px;
-  border-radius: 8px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: var(--card-shadow);
-  transition: opacity 0.3s ease;
+.nav a:hover {
+    background: rgba(255, 255, 255, 0.18);
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
 }
 
-.popup-banner span {
-  font-size: 15px;
-  line-height: 1.4;
+
+/* =========================================================
+   8. DARK MODE BUTTON
+========================================================= */
+
+.dark-mode-btn,
+#themeBtn {
+    background: transparent;
+
+    color: #ffffff;
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    padding: 8px 14px;
+
+    border-radius: 20px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    transition:
+        background-color var(--transition),
+        color var(--transition),
+        transform var(--transition);
 }
 
-.popup-close-btn {
-  background: transparent;
-  border: none;
-  font-size: 24px;
-  font-weight: bold;
-  color: var(--heading-color);
-  cursor: pointer;
-  padding: 0 8px;
-  margin-left: 15px;
-  line-height: 1;
-  transition: color 0.2s ease;
+.dark-mode-btn:hover,
+#themeBtn:hover {
+    background: #ffffff;
+
+    color: var(--dark-blue);
+
+    transform: translateY(-2px);
 }
 
-.popup-close-btn:hover {
-  color: #ff4d4d;
+
+/* =========================================================
+   9. WELCOME ALERT
+========================================================= */
+
+.alert {
+    width: 90%;
+
+    max-width: 950px;
+
+    margin: 20px auto;
+
+    padding: 14px 18px;
+
+    background: var(--light-blue);
+
+    color: var(--dark-blue);
+
+    border: 1px solid var(--border);
+
+    border-radius: 9px;
+
+    box-shadow: var(--shadow);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 14px;
 }
 
-/* ==========================================================================
-   Hero & Layout Sections
-   ========================================================================== */
+.alert strong {
+    font-weight: 700;
+}
+
+.close-btn {
+    margin-left: auto;
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--dark-blue);
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #d93025;
+}
+
+
+/* =========================================================
+   10. HERO
+========================================================= */
+
 .hero {
-  padding: 100px 7%;
-  background: var(--hero-bg);
-  color: var(--hero-text);
+    background:
+        linear-gradient(
+            135deg,
+            #12a6b2 0%,
+            #08747b 100%
+        );
+
+    color: #ffffff;
+
+    padding: 70px 0;
 }
 
-.hero h1 {
-  font-size: 48px;
-  max-width: 680px;
-  margin-bottom: 18px;
+
+/* =========================================================
+   11. SLIDER
+========================================================= */
+
+.slider {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 0.9fr);
+
+    align-items: center;
+
+    gap: 42px;
 }
 
-.hero p {
-  max-width: 620px;
-  font-size: 18px;
-  margin-bottom: 30px;
+.slider-image-container {
+    width: 100%;
+
+    overflow: hidden;
+
+    border-radius: 15px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.25);
 }
 
-.container {
-  width: 86%;
-  max-width: 1100px;
-  margin: auto;
+.slider-image {
+    display: block;
+
+    width: 100%;
+
+    height: 350px;
+
+    object-fit: cover;
 }
+
+
+/* =========================================================
+   12. HERO CONTENT
+========================================================= */
+
+.hero-content {
+    padding: 10px 0;
+}
+
+.hero-content h1 {
+    color: #ffffff;
+
+    font-size: clamp(34px, 4vw, 52px);
+
+    line-height: 1.1;
+
+    margin-bottom: 22px;
+
+    font-weight: 700;
+}
+
+.hero-content p {
+    color: rgba(255, 255, 255, 0.93);
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    max-width: 560px;
+
+    margin-bottom: 28px;
+}
+
+
+/* =========================================================
+   13. GENERAL BUTTON
+========================================================= */
+
+.btn {
+    display: inline-block;
+
+    padding: 12px 20px;
+
+    background: var(--blue);
+
+    color: #ffffff;
+
+    border: 1px solid var(--blue);
+
+    border-radius: 7px;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition:
+        background-color var(--transition),
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.btn:hover {
+    background: var(--dark-blue);
+
+    border-color: var(--dark-blue);
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 12px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================================
+   14. PREVIOUS / NEXT BUTTONS
+========================================================= */
+
+.nav-buttons {
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 20px;
+}
+
+.btn-nav {
+    background: #ffffff;
+
+    color: var(--dark-blue);
+
+    border: 1px solid #d6edef;
+
+    padding: 9px 17px;
+
+    border-radius: 7px;
+
+    font-weight: 600;
+}
+
+.btn-nav:hover {
+    background: var(--light-blue);
+
+    color: var(--dark-blue);
+
+    border-color: var(--light-blue);
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   15. SLIDER DOTS
+========================================================= */
+
+.slider-dots {
+    display: flex;
+
+    gap: 8px;
+
+    margin-top: 20px;
+}
+
+.slider-dot {
+    width: 10px;
+
+    height: 10px;
+
+    display: inline-block;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.45);
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.slider-dot.active {
+    background: #ffffff;
+
+    transform: scale(1.2);
+}
+
+
+/* =========================================================
+   16. SECTION
+========================================================= */
 
 .section {
-  padding: 55px 0;
+    padding: 60px 0;
 }
 
 .section h1,
 .section h2 {
-  color: var(--heading-color);
-  margin-bottom: 15px;
+    color: var(--dark-blue);
+
+    font-size: 28px;
+
+    margin-bottom: 15px;
+
+    font-weight: 700;
 }
+
+html[data-theme="dark"] .section h1,
+html[data-theme="dark"] .section h2 {
+    color: var(--blue);
+}
+
+.section > p {
+    color: var(--muted-text);
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================================
+   17. FILTER BUTTONS
+========================================================= */
+
+.filter-buttons {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-bottom: 25px;
+}
+
+.filter-btn {
+    background: var(--white);
+
+    color: var(--dark-blue);
+
+    border: 1px solid var(--border);
+
+    padding: 8px 16px;
+
+    border-radius: 20px;
+
+    cursor: pointer;
+
+    font-weight: 600;
+
+    transition: all var(--transition);
+}
+
+.filter-btn:hover {
+    background: var(--light-blue);
+}
+
+.filter-btn.active {
+    background: var(--blue);
+
+    color: #ffffff;
+
+    border-color: var(--blue);
+}
+
+
+/* =========================================================
+   18. CARD GRID
+========================================================= */
 
 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 22px;
-  margin-top: 25px;
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 22px;
 }
 
-/* Cards & Forms */
-.card,
-form {
-  background: var(--card-bg);
-  padding: 25px;
-  border-radius: 12px;
-  border: 1px solid var(--card-border);
-  box-shadow: var(--card-shadow);
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+
+/* =========================================================
+   19. CARDS
+========================================================= */
+
+.card {
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+    box-shadow: var(--shadow);
+
+    overflow: hidden;
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 12px 28px rgba(8, 116, 123, 0.20);
+}
+
+.card-img {
+    width: 100%;
+
+    height: 155px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+
+    display: block;
+
+    margin-bottom: 16px;
 }
 
 .card h3 {
-  color: var(--heading-color);
-  margin-bottom: 10px;
+    color: var(--dark-blue);
+
+    font-size: 18px;
+
+    margin-bottom: 8px;
+}
+
+html[data-theme="dark"] .card h3 {
+    color: var(--blue);
 }
 
 .card p {
-  color: var(--text-muted);
+    color: var(--muted-text);
+
+    font-size: 14px;
+
+    line-height: 1.7;
 }
 
-/* Buttons */
-.btn {
-  display: inline-block;
-  background: #0FA4AF;
-  color: white;
-  border: 2px solid #0FA4AF;
-  padding: 11px 18px;
-  border-radius: 7px;
-  text-decoration: none;
-  cursor: pointer;
-  font-weight: bold;
-}
 
-.btn:hover {
-  background: #0B6E75;
-  border-color: #0B6E75;
-}
-
-.btn-light {
-  background: var(--title-bg);
-  color: var(--heading-color);
-  border-color: var(--title-bg);
-}
-
-.btn-light:hover {
-  background: var(--card-bg);
-  color: var(--heading-color);
-}
-
-/* Titles & Forms */
-.title {
-  text-align: center;
-  background: var(--title-bg);
-  padding: 45px 20px;
-  color: var(--heading-color);
-}
-
-.title h1 {
-  font-size: 38px;
-  margin-bottom: 8px;
-}
+/* =========================================================
+   20. FORMS
+========================================================= */
 
 .form-card {
-  max-width: 510px;
-  margin: 50px auto;
+    max-width: 550px;
+
+    margin: 55px auto;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    box-shadow: var(--shadow);
+
+    padding: 32px;
 }
 
 .form-card h2 {
-  color: var(--heading-color);
-  margin-bottom: 20px;
+    color: var(--dark-blue);
+
+    margin-bottom: 22px;
+
+    font-size: 27px;
 }
 
+html[data-theme="dark"] .form-card h2 {
+    color: var(--blue);
+}
+
+
+/* =========================================================
+   21. FORM FIELDS
+========================================================= */
+
 .field {
-  margin: 16px 0;
+    margin-bottom: 18px;
 }
 
 .field label {
-  display: block;
-  color: var(--heading-color);
-  font-weight: bold;
-  margin-bottom: 6px;
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: var(--text);
+
+    font-size: 14px;
+
+    font-weight: 600;
 }
 
 .field input,
 .field select,
 .field textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid var(--input-border);
-  border-radius: 6px;
-  font-family: Arial, sans-serif;
-  font-size: 15px;
-  color: var(--text-main);
-  background: var(--input-bg);
+    width: 100%;
+
+    padding: 11px 12px;
+
+    background: var(--input-background);
+
+    color: var(--text);
+
+    border: 1px solid var(--input-border);
+
+    border-radius: 6px;
+
+    outline: none;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 14px;
+
+    transition:
+        border-color var(--transition),
+        box-shadow var(--transition);
 }
 
 .field input:focus,
 .field select:focus,
 .field textarea:focus {
-  outline: 3px solid var(--input-focus);
-  border-color: #0FA4AF;
+    border-color: var(--blue);
+
+    box-shadow:
+        0 0 0 3px rgba(18, 166, 178, 0.15);
 }
 
 .field textarea {
-  height: 115px;
-  resize: vertical;
+    min-height: 120px;
+
+    resize: vertical;
 }
 
-/* Stats */
-.stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
-  margin: 28px 0;
+
+/* =========================================================
+   22. LOGIN PAGE
+========================================================= */
+
+.login-page {
+    min-height: calc(100vh - 78px);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 50px 20px;
 }
 
-.stat {
-  background: var(--stat-bg);
-  padding: 25px;
-  text-align: center;
-  border-radius: 12px;
-  border: 2px solid var(--stat-border);
-  box-shadow: var(--card-shadow);
+.login-card {
+    width: 100%;
+
+    max-width: 430px;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    box-shadow: var(--shadow);
+
+    padding: 35px;
 }
 
-.stat h2 {
-  color: var(--heading-color);
-  font-size: 34px;
-  margin-bottom: 5px;
+.login-card h1 {
+    text-align: center;
+
+    color: var(--dark-blue);
+
+    margin-bottom: 8px;
 }
 
-.stat p {
-  color: var(--text-main);
-  font-weight: bold;
+html[data-theme="dark"] .login-card h1 {
+    color: var(--blue);
 }
 
-/* Tables */
+.login-subtitle {
+    text-align: center;
+
+    color: var(--muted-text);
+
+    margin-bottom: 28px;
+}
+
+.login-card .btn {
+    width: 100%;
+
+    margin-top: 5px;
+}
+
+.login-links {
+    text-align: center;
+
+    margin-top: 20px;
+}
+
+.login-links a {
+    color: var(--dark-blue);
+
+    text-decoration: none;
+
+    font-weight: 600;
+}
+
+.login-links a:hover {
+    color: var(--blue);
+
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   23. EVENTS
+========================================================= */
+
+.events-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 24px;
+
+    margin-top: 30px;
+}
+
+.event-card {
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    padding: 25px;
+
+    box-shadow: var(--shadow);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 12px 28px rgba(8, 116, 123, 0.20);
+}
+
+.event-card h3 {
+    color: var(--dark-blue);
+
+    font-size: 20px;
+
+    margin-bottom: 12px;
+}
+
+html[data-theme="dark"] .event-card h3 {
+    color: var(--blue);
+}
+
+.event-card p {
+    color: var(--muted-text);
+
+    margin-bottom: 8px;
+}
+
+.event-date {
+    display: inline-block;
+
+    background: var(--light-blue);
+
+    color: var(--dark-blue);
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================================================
+   24. CONTACT PAGE
+========================================================= */
+
+.contact-wrapper {
+    display: grid;
+
+    grid-template-columns:
+        0.8fr 1.2fr;
+
+    gap: 30px;
+
+    align-items: start;
+
+    max-width: 1000px;
+
+    margin: 50px auto;
+}
+
+.contact-info {
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    padding: 30px;
+
+    box-shadow: var(--shadow);
+}
+
+.contact-info h2 {
+    color: var(--dark-blue);
+
+    margin-bottom: 15px;
+}
+
+html[data-theme="dark"] .contact-info h2 {
+    color: var(--blue);
+}
+
+.contact-info p {
+    color: var(--muted-text);
+
+    margin-bottom: 16px;
+}
+
+.contact-info strong {
+    color: var(--text);
+}
+
+
+/* =========================================================
+   25. FOOTER
+========================================================= */
+
+.footer {
+    background: var(--footer-background);
+
+    color: #ffffff;
+
+    text-align: center;
+
+    padding: 24px 15px;
+
+    margin-top: 30px;
+}
+
+.footer p {
+    margin: 0;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   26. GENERAL LINKS
+========================================================= */
+
+a {
+    color: var(--dark-blue);
+}
+
+html[data-theme="dark"] a {
+    color: var(--blue);
+}
+
+
+/* =========================================================
+   27. TABLE
+========================================================= */
+
 table {
-  width: 100%;
-  background: var(--table-bg);
-  border-collapse: collapse;
-  margin-top: 25px;
-  border: 2px solid var(--table-border);
-  box-shadow: var(--card-shadow);
+    width: 100%;
+
+    border-collapse: collapse;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    box-shadow: var(--shadow);
+
+    margin-top: 25px;
 }
 
 th,
 td {
-  padding: 14px;
-  text-align: left;
-  border: 1px solid var(--table-border);
+    padding: 12px 14px;
+
+    border: 1px solid var(--border);
+
+    text-align: left;
 }
 
 th {
-  background: var(--nav-bg);
-  color: var(--nav-text);
+    background: var(--blue);
+
+    color: #ffffff;
 }
 
 tr:nth-child(even) {
-  background: var(--table-even);
+    background: rgba(18, 166, 178, 0.05);
 }
 
 tr:hover {
-  background: var(--table-hover);
+    background: var(--light-blue);
 }
 
-/* Footer & Links */
-.footer {
-  background: var(--footer-bg);
-  color: var(--footer-text);
-  text-align: center;
-  padding: 25px;
-  margin-top: 50px;
+
+/* =========================================================
+   28. RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .header .container {
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        padding: 15px 0;
+
+        gap: 12px;
+    }
+
+    .logo {
+        order: 1;
+    }
+
+    .dark-mode-btn {
+        order: 0;
+    }
+
+    .nav {
+        order: 2;
+
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+    .slider {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero-content p {
+        margin-left: auto;
+
+        margin-right: auto;
+    }
+
+    .nav-buttons {
+        justify-content: center;
+    }
+
+    .slider-dots {
+        justify-content: center;
+    }
+
+    .grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .events-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
 }
 
-a {
-  color: var(--heading-color);
+
+/* =========================================================
+   29. RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 520px) {
+
+    .container {
+        width: 92%;
+    }
+
+    .header .container {
+        flex-direction: column;
+
+        min-height: auto;
+
+        padding: 15px 0;
+    }
+
+    .logo {
+        font-size: 23px;
+    }
+
+    .nav {
+        gap: 2px;
+    }
+
+    .nav a {
+        font-size: 13px;
+
+        padding: 7px 8px;
+    }
+
+    .dark-mode-btn {
+        font-size: 12px;
+    }
+
+    .alert {
+        width: 92%;
+
+        padding: 12px;
+
+        font-size: 13px;
+    }
+
+    .hero {
+        padding: 35px 0;
+    }
+
+    .slider {
+        gap: 25px;
+    }
+
+    .slider-image {
+        height: 230px;
+    }
+
+    .hero-content h1 {
+        font-size: 30px;
+
+        line-height: 1.2;
+    }
+
+    .hero-content p {
+        font-size: 15px;
+    }
+
+    .nav-buttons {
+        flex-direction: row;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+    .section {
+        padding: 40px 0;
+    }
+
+    .section h1,
+    .section h2 {
+        font-size: 24px;
+    }
+
+    .filter-buttons {
+        justify-content: center;
+    }
+
+    .grid,
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card-img {
+        height: 190px;
+    }
+
+    .form-card,
+    .login-card {
+        width: 100%;
+
+        margin: 30px auto;
+
+        padding: 22px;
+    }
+
+    .login-page {
+        padding: 25px 15px;
+    }
+
+    .contact-wrapper {
+        margin: 30px auto;
+    }
+
+    .footer {
+        padding: 20px 10px;
+    }
 }
 
-a:hover {
-  color: #0FA4AF;
-}
 
-/* Responsive Styles */
-@media (max-width: 650px) {
-  nav {
-    display: block;
-    text-align: center;
-  }
+/* =========================================================
+   30. VERY SMALL MOBILE
+========================================================= */
 
-  nav div {
-    margin-top: 15px;
-  }
+@media (max-width: 360px) {
 
-  nav a {
-    display: inline-block;
-    margin: 5px;
-  }
+    .nav a {
+        font-size: 12px;
 
-  .hero {
-    padding: 65px 7%;
-  }
+        padding: 6px;
+    }
 
-  .hero h1 {
-    font-size: 36px;
-  }
+    .hero-content h1 {
+        font-size: 27px;
+    }
 
-  .title h1 {
-    font-size: 30px;
-  }
+    .slider-image {
+        height: 200px;
+    }
 
-  table {
-    font-size: 14px;
-  }
-
-  th,
-  td {
-    padding: 9px;
-  }
+    .btn {
+        padding: 10px 14px;
+    }
 }

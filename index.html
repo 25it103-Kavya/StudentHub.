@@ -1,67 +1,890 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home | StudentHub</title>
-  <link rel="stylesheet" href="style.css">
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Home | StudentHub</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+
 </head>
+
+
 <body>
 
-<nav>
-  <button id="themeBtn">🌙 Dark Mode</button>
-  <a class="brand" href="index.html">Student<span>Hub</span></a>
 
-  <div>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="events.html">Events</a>
-    <a href="contact.html">Contact</a>
-    <a href="login.html">Login</a>
-  </div>
-</nav>
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
-<div id="popupBanner" class="popup-banner">
-  <span>📢 <strong>Welcome to StudentHub!</strong> Explore courses, track academic records, and stay updated with campus events—all in one place.</span>
-  <button id="closePopupBtn" class="popup-close-btn" aria-label="Close popup">&times;</button>
+<header class="header">
+
+    <div class="container">
+
+        <!-- Dark Mode Button -->
+
+        <button
+            id="darkModeBtn"
+            class="dark-mode-btn"
+            type="button"
+            aria-label="Toggle dark mode">
+
+            🌙 Dark Mode
+
+        </button>
+
+
+        <!-- Website Logo -->
+
+        <h2 class="logo">
+            StudentHub
+        </h2>
+
+
+        <!-- Navigation -->
+
+        <nav class="nav"
+             aria-label="Main navigation">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="events.html">
+                Events
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+            <a href="login.html">
+                Login
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     WELCOME MESSAGE
+===================================================== -->
+
+<div class="container">
+
+    <div class="alert"
+         id="alert">
+
+        <span>
+
+            📢
+            <strong>
+                Welcome to StudentHub!
+            </strong>
+
+            Explore courses, track academic records,
+            and stay updated with campus events—all in one place.
+
+        </span>
+
+
+        <button
+            id="closeAlert"
+            class="close-btn"
+            type="button"
+            aria-label="Close welcome message">
+
+            ×
+
+        </button>
+
+    </div>
+
 </div>
 
+
+
+<!-- =====================================================
+     HERO / IMAGE SLIDER
+===================================================== -->
+
 <section class="hero">
-  <div class="container">
-    <h1>Your Campus Life, All in One Place</h1>
-    <p>
-      Manage your profile, discover events and stay connected
-      with your college community.
-    </p>
-    <a class="btn btn-light" href="register.html">Join StudentHub</a>
-  </div>
+
+    <div class="container">
+
+        <div class="slider">
+
+
+            <!-- ===============================
+                 SLIDER IMAGE
+            ================================ -->
+
+            <div class="slider-image-container">
+
+                <img
+                    id="sliderImage"
+                    src="js/images/student%20center.jpeg"
+                    alt="Student Center"
+                    class="slider-image"
+                >
+
+            </div>
+
+
+
+            <!-- ===============================
+                 SLIDER CONTENT
+            ================================ -->
+
+            <div class="hero-content">
+
+
+                <h1 id="sliderTitle">
+
+                    Your Campus Life,
+                    All in One Place
+
+                </h1>
+
+
+                <p id="sliderDescription">
+
+                    Manage your profile, discover events
+                    and stay connected with your college
+                    community.
+
+                </p>
+
+
+
+                <!-- ===============================
+                     JOIN STUDENTHUB
+                ================================ -->
+
+                <a
+                    href="register.html"
+                    class="btn">
+
+                    Join StudentHub
+
+                </a>
+
+
+
+                <!-- ===============================
+                     PREVIOUS / NEXT
+                ================================ -->
+
+                <div class="nav-buttons">
+
+
+                    <button
+                        id="prevBtn"
+                        class="btn btn-nav"
+                        type="button"
+                        aria-label="Previous slide">
+
+                        ← Previous
+
+                    </button>
+
+
+                    <button
+                        id="nextBtn"
+                        class="btn btn-nav"
+                        type="button"
+                        aria-label="Next slide">
+
+                        Next →
+
+                    </button>
+
+
+                </div>
+
+
+
+                <!-- ===============================
+                     SLIDER INDICATORS
+                ================================ -->
+
+                <div
+                    class="slider-dots"
+                    aria-label="Slider indicators">
+
+                    <span
+                        class="slider-dot active"
+                        data-slide="0">
+                    </span>
+
+                    <span
+                        class="slider-dot"
+                        data-slide="1">
+                    </span>
+
+                    <span
+                        class="slider-dot"
+                        data-slide="2">
+                    </span>
+
+                    <span
+                        class="slider-dot"
+                        data-slide="3">
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
 
-<section class="section container">
-  <h2>Everything Students Need</h2>
 
-  <div class="grid">
-    <div class="card">
-      <h3>Student Dashboard</h3>
-      <p>View important academic and student information.</p>
+
+<!-- =====================================================
+     STUDENT SERVICES
+===================================================== -->
+
+<section class="section">
+
+    <div class="container">
+
+
+        <h2>
+            Everything Students Need
+        </h2>
+
+
+
+        <!-- ===============================
+             FILTER BUTTONS
+        ================================ -->
+
+        <div class="filter-buttons">
+
+
+            <button
+                class="filter-btn active"
+                data-filter="all"
+                type="button">
+
+                All
+
+            </button>
+
+
+            <button
+                class="filter-btn"
+                data-filter="academic"
+                type="button">
+
+                Academic
+
+            </button>
+
+
+            <button
+                class="filter-btn"
+                data-filter="events"
+                type="button">
+
+                Events
+
+            </button>
+
+
+            <button
+                class="filter-btn"
+                data-filter="services"
+                type="button">
+
+                Services
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             CARDS
+        ================================================== -->
+
+        <div class="grid">
+
+
+
+            <!-- ===============================
+                 STUDENT DASHBOARD
+            ================================ -->
+
+            <div
+                class="card"
+                data-category="academic">
+
+
+                <img
+                    src="js/images/student%20center.jpeg"
+                    alt="Student Center"
+                    class="card-img"
+                >
+
+
+                <h3>
+                    Student Dashboard
+                </h3>
+
+
+                <p>
+                    View important academic and
+                    student information.
+                </p>
+
+
+            </div>
+
+
+
+            <!-- ===============================
+                 CAMPUS EVENTS
+            ================================ -->
+
+            <div
+                class="card"
+                data-category="events">
+
+
+                <img
+                    src="js/images/charusat%20university.jpeg"
+                    alt="CHARUSAT University campus"
+                    class="card-img"
+                >
+
+
+                <h3>
+                    Campus Events
+                </h3>
+
+
+                <p>
+                    Discover workshops, programs
+                    and college activities.
+                </p>
+
+
+            </div>
+
+
+
+            <!-- ===============================
+                 STUDENT FEEDBACK
+            ================================ -->
+
+            <div
+                class="card"
+                data-category="services">
+
+
+                <img
+                    src="js/images/charusat%20library.jpeg"
+                    alt="CHARUSAT Library"
+                    class="card-img"
+                >
+
+
+                <h3>
+                    Student Feedback
+                </h3>
+
+
+                <p>
+                    Share your ideas and help
+                    improve campus life.
+                </p>
+
+
+            </div>
+
+
+
+            <!-- ===============================
+                 STUDENT PORTAL
+            ================================ -->
+
+            <div
+                class="card"
+                data-category="academic">
+
+
+                <img
+                    src="js/images/student%20hub%20portal.jpeg"
+                    alt="Student Hub Portal"
+                    class="card-img"
+                >
+
+
+                <h3>
+                    Student Portal
+                </h3>
+
+
+                <p>
+                    Access learning resources
+                    and campus facilities easily.
+                </p>
+
+
+            </div>
+
+
+        </div>
+
     </div>
 
-    <div class="card">
-      <h3>Campus Events</h3>
-      <p>Discover workshops, programs and college activities.</p>
-    </div>
-
-    <div class="card">
-      <h3>Student Feedback</h3>
-      <p>Share your ideas and help improve campus life.</p>
-    </div>
-  </div>
 </section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer class="footer">
-  © <span id="year"></span> StudentHub Portal
+
+    <p>
+        © 2026 StudentHub Portal
+    </p>
+
 </footer>
 
-<script src="js/script.js"></script>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+/* =====================================================
+   IMAGE SLIDER DATA
+===================================================== */
+
+const slides = [
+
+    {
+        image: "js/images/student%20center.jpeg",
+
+        title:
+            "Your Campus Life, All in One Place",
+
+        description:
+            "Manage your profile, discover events and stay connected with your college community."
+    },
+
+
+    {
+        image: "js/images/charusat%20university.jpeg",
+
+        title:
+            "Explore Your University",
+
+        description:
+            "Discover your campus, facilities and everything your university has to offer."
+    },
+
+
+    {
+        image: "js/images/charusat%20library.jpeg",
+
+        title:
+            "Learn and Grow",
+
+        description:
+            "Access learning resources and make the most of your academic journey."
+    },
+
+
+    {
+        image: "js/images/student%20hub%20portal.jpeg",
+
+        title:
+            "Everything Students Need",
+
+        description:
+            "Access your student portal, events, feedback and academic information."
+    }
+
+];
+
+
+
+/* =====================================================
+   CURRENT SLIDE
+===================================================== */
+
+let currentSlide = 0;
+
+
+
+/* =====================================================
+   SLIDER ELEMENTS
+===================================================== */
+
+const sliderImage =
+    document.getElementById("sliderImage");
+
+const sliderTitle =
+    document.getElementById("sliderTitle");
+
+const sliderDescription =
+    document.getElementById("sliderDescription");
+
+const prevBtn =
+    document.getElementById("prevBtn");
+
+const nextBtn =
+    document.getElementById("nextBtn");
+
+const sliderDots =
+    document.querySelectorAll(".slider-dot");
+
+
+
+/* =====================================================
+   SHOW SLIDE
+===================================================== */
+
+function showSlide(index) {
+
+
+    /* Move to first slide */
+
+    if (index >= slides.length) {
+
+        currentSlide = 0;
+
+    }
+
+
+    /* Move to last slide */
+
+    if (index < 0) {
+
+        currentSlide = slides.length - 1;
+
+    }
+
+
+    const slide =
+        slides[currentSlide];
+
+
+    /* Change image */
+
+    sliderImage.src =
+        slide.image;
+
+
+    /* Change image alternative text */
+
+    sliderImage.alt =
+        slide.title;
+
+
+    /* Change heading */
+
+    sliderTitle.textContent =
+        slide.title;
+
+
+    /* Change description */
+
+    sliderDescription.textContent =
+        slide.description;
+
+
+
+    /* =================================================
+       UPDATE SLIDER DOTS
+    ================================================== */
+
+    sliderDots.forEach(function (dot, index) {
+
+        dot.classList.remove("active");
+
+
+        if (index === currentSlide) {
+
+            dot.classList.add("active");
+
+        }
+
+    });
+
+}
+
+
+
+/* =====================================================
+   NEXT BUTTON
+===================================================== */
+
+nextBtn.addEventListener(
+    "click",
+    function () {
+
+        currentSlide++;
+
+        showSlide(currentSlide);
+
+    }
+);
+
+
+
+/* =====================================================
+   PREVIOUS BUTTON
+===================================================== */
+
+prevBtn.addEventListener(
+    "click",
+    function () {
+
+        currentSlide--;
+
+        showSlide(currentSlide);
+
+    }
+);
+
+
+
+/* =====================================================
+   SLIDER DOT CLICK
+===================================================== */
+
+sliderDots.forEach(function (dot) {
+
+    dot.addEventListener(
+        "click",
+        function () {
+
+            currentSlide =
+                Number(
+                    dot.getAttribute("data-slide")
+                );
+
+            showSlide(currentSlide);
+
+        }
+    );
+
+});
+
+
+
+/* =====================================================
+   IMPORTANT:
+   NO AUTOMATIC SLIDER
+
+   There is intentionally NO setInterval()
+   here.
+
+   The image changes only when:
+   - Previous is pressed
+   - Next is pressed
+   - A slider dot is pressed
+===================================================== */
+
+
+
+/* =====================================================
+   CARD FILTER
+===================================================== */
+
+const filterButtons =
+    document.querySelectorAll(".filter-btn");
+
+const cards =
+    document.querySelectorAll(".card");
+
+
+filterButtons.forEach(function (button) {
+
+
+    button.addEventListener(
+        "click",
+        function () {
+
+
+            const filter =
+                button.getAttribute(
+                    "data-filter"
+                );
+
+
+
+            /* Remove active class */
+
+            filterButtons.forEach(
+                function (btn) {
+
+                    btn.classList.remove(
+                        "active"
+                    );
+
+                }
+            );
+
+
+            /* Add active class */
+
+            button.classList.add("active");
+
+
+
+            /* Filter cards */
+
+            cards.forEach(
+                function (card) {
+
+
+                    const category =
+                        card.getAttribute(
+                            "data-category"
+                        );
+
+
+                    if (
+                        filter === "all" ||
+                        category === filter
+                    ) {
+
+                        card.style.display =
+                            "block";
+
+                    }
+
+                    else {
+
+                        card.style.display =
+                            "none";
+
+                    }
+
+                }
+            );
+
+        }
+    );
+
+});
+
+
+
+/* =====================================================
+   CLOSE WELCOME MESSAGE
+===================================================== */
+
+const closeAlert =
+    document.getElementById("closeAlert");
+
+
+if (closeAlert) {
+
+    closeAlert.addEventListener(
+        "click",
+        function () {
+
+            const alert =
+                document.getElementById("alert");
+
+
+            if (alert) {
+
+                alert.style.display =
+                    "none";
+
+            }
+
+        }
+    );
+
+}
+
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+const darkModeBtn =
+    document.getElementById("darkModeBtn");
+
+
+if (darkModeBtn) {
+
+
+    darkModeBtn.addEventListener(
+        "click",
+        function () {
+
+
+            document.body.classList.toggle(
+                "dark-mode"
+            );
+
+
+            /* Change button text */
+
+            if (
+                document.body.classList.contains(
+                    "dark-mode"
+                )
+            ) {
+
+                darkModeBtn.textContent =
+                    "☀️ Light Mode";
+
+            }
+
+            else {
+
+                darkModeBtn.textContent =
+                    "🌙 Dark Mode";
+
+            }
+
+        }
+    );
+
+}
+
+
+
+</script>
+
+
 </body>
+
 </html>

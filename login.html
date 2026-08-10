@@ -1,55 +1,165 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login | StudentHub</title>
-  <link rel="stylesheet" href="style.css">
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Login | StudentHub</title>
+
+    <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
 
-<nav>
-  
-  <button id="themeBtn">🌙 Dark Mode</button>
-  <a class="brand" href="index.html">Student<span>Hub</span></a>
+<!-- =====================================================
+     HEADER
+====================================================== -->
 
-  <div>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="events.html">Events</a>
-    <a href="contact.html">Contact</a>
-    <a href="register.html">Register</a>
-  </div>
-</nav>
+<header class="header">
 
-<main class="container">
-  <form class="form-card" data-message="Login successful!">
+    <div class="container">
 
-    <h2>Student Login</h2>
+        <button
+            id="darkModeBtn"
+            class="dark-mode-btn"
+            type="button">
 
-    <div class="field">
-      <label>Email</label>
-      <input type="email" placeholder="student@example.com" required>
+            🌙 Dark Mode
+
+        </button>
+
+        <h2 class="logo">
+            StudentHub
+        </h2>
+
+        <nav class="nav"
+             aria-label="Main navigation">
+
+            <a href="index.html">Home</a>
+
+            <a href="about.html">About</a>
+
+            <a href="events.html">Events</a>
+
+            <a href="contact.html">Contact</a>
+
+            <a href="login.html">Login</a>
+
+        </nav>
+
     </div>
 
-    <div class="field">
-      <label>Password</label>
-      <input type="password" placeholder="Enter password" required>
+</header>
+
+
+<!-- =====================================================
+     LOGIN
+====================================================== -->
+
+<main class="login-page">
+
+    <div class="login-card">
+
+        <h1>
+            Welcome Back
+        </h1>
+
+        <p class="login-subtitle">
+            Login to your StudentHub account
+        </p>
+
+
+        <form id="loginForm">
+
+
+            <!-- EMAIL -->
+
+            <div class="field">
+
+                <label for="loginEmail">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="loginEmail"
+                    name="email"
+                    placeholder="Enter your email"
+                    required>
+
+            </div>
+
+
+            <!-- PASSWORD -->
+
+            <div class="field">
+
+                <label for="loginPassword">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="loginPassword"
+                    name="password"
+                    placeholder="Enter your password"
+                    minlength="6"
+                    required>
+
+            </div>
+
+
+            <!-- LOGIN BUTTON -->
+
+            <button
+                class="btn"
+                type="submit">
+
+                Login
+
+            </button>
+
+
+        </form>
+
+
+        <div class="login-links">
+
+            <p>
+                Don't have an account?
+                <a href="register.html">
+                    Register here
+                </a>
+            </p>
+
+        </div>
+
     </div>
 
-    <button class="btn" type="submit">Login</button>
-
-    <p>
-      New student?
-      <a href="register.html">Create an account</a>
-    </p>
-  </form>
 </main>
 
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
 <footer class="footer">
-  © <span id="year"></span> StudentHub Portal
+
+    <p>
+        © <span id="year"></span> StudentHub Portal
+    </p>
+
 </footer>
 
+
 <script src="js/script.js"></script>
+
 </body>
 </html>
+```
