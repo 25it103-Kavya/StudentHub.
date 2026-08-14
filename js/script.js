@@ -1,5 +1,3 @@
-
-
 document.addEventListener("DOMContentLoaded", function () {
 
     // =========================================================
@@ -8,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // =========================================================
-    // IMAGE SLIDER
+    // 1. IMAGE SLIDER
     // =========================================================
 
     const sliderImage = document.getElementById("sliderImage");
@@ -123,8 +121,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         dot.addEventListener("click", function () {
 
-            const slide =
-                Number(dot.getAttribute("data-slide"));
+            const slide = Number(
+                dot.getAttribute("data-slide")
+            );
 
             if (!isNaN(slide)) {
                 showImage(slide);
@@ -143,7 +142,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // =========================================================
-    // CONSOLE INFORMATION
+    // 2. CONSOLE INFORMATION
     // =========================================================
 
     console.log("Welcome to StudentHub");
@@ -157,7 +156,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // =========================================================
-    // DATA TYPES
+    // 3. DATA TYPES
     // =========================================================
 
     const college = "CHARUSAT";
@@ -168,7 +167,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // =========================================================
-    // FUNCTION WITHOUT PARAMETER
+    // 4. FUNCTION WITHOUT PARAMETER
     // =========================================================
 
     function welcomeMessage() {
@@ -181,7 +180,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // =========================================================
-    // FUNCTION WITH PARAMETER
+    // 5. FUNCTION WITH PARAMETER
     // =========================================================
 
     function welcomeStudent(name) {
@@ -194,22 +193,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // =========================================================
-    // HEADING BUTTON
+    // 6. CHANGE HEADING BUTTON
+    // TOGGLE GRADUATION CAP ICON
     // =========================================================
 
-    const headingButton =
+    const changeHeadingBtn =
+        document.getElementById("changeHeadingBtn") ||
         document.getElementById("headingBtn");
 
-    const heading =
-        document.getElementById("mainHeading");
+    const logoIcon =
+        document.getElementById("logoIcon");
+
+    let hasIcon = false;
 
 
-    if (headingButton && heading) {
+    if (changeHeadingBtn && logoIcon) {
 
-        headingButton.addEventListener("click", function () {
+        changeHeadingBtn.addEventListener("click", function () {
 
-            heading.textContent =
-                "Welcome to StudentHub";
+            hasIcon = !hasIcon;
+
+            if (hasIcon) {
+
+                logoIcon.textContent = "🎓 ";
+
+            } else {
+
+                logoIcon.textContent = "";
+
+            }
 
         });
 
@@ -217,7 +229,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // =========================================================
-    // CLOSE ALERT
+    // 7. CLOSE WELCOME ALERT
     // =========================================================
 
     const closeAlert =
@@ -239,7 +251,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // =========================================================
-    // DYNAMIC YEAR
+    // 8. DYNAMIC YEAR
     // =========================================================
 
     const yearSpan =
@@ -255,22 +267,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // =========================================================
-    // DARK / LIGHT MODE
+    // 9. DARK / LIGHT MODE
     // WORKS ON ALL PAGES
     // =========================================================
 
-    const themeButtons = document.querySelectorAll(
-        "#darkModeBtn, #themeBtn, .dark-mode-btn"
-    );
+    const themeButtons =
+        document.querySelectorAll(
+            "#darkModeBtn, #themeBtn, .dark-mode-btn"
+        );
 
 
-    // ---------------------------------------------------------
+    // =========================================================
     // APPLY THEME
-    // ---------------------------------------------------------
+    // =========================================================
 
     function applyTheme(theme) {
-
-        // Set theme on HTML element
 
         document.documentElement.setAttribute(
             "data-theme",
@@ -286,7 +297,7 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-        // Change button text
+        // Change all theme buttons
 
         themeButtons.forEach(function (button) {
 
@@ -317,9 +328,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    // ---------------------------------------------------------
+    // =========================================================
     // LOAD SAVED THEME
-    // ---------------------------------------------------------
+    // =========================================================
 
     let savedTheme =
         localStorage.getItem("theme");
@@ -338,9 +349,9 @@ document.addEventListener("DOMContentLoaded", function () {
     applyTheme(savedTheme);
 
 
-    // ---------------------------------------------------------
+    // =========================================================
     // DARK / LIGHT BUTTON CLICK
-    // ---------------------------------------------------------
+    // =========================================================
 
     themeButtons.forEach(function (button) {
 
@@ -368,7 +379,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // =========================================================
-    // CARD FILTER
+    // 10. CARD FILTER
     // =========================================================
 
     const filterButtons =
@@ -429,13 +440,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // =========================================================
-    // EVENT REGISTRATION
+    // 11. EVENT REGISTRATION
     // =========================================================
 
     const eventButtons =
-        document.querySelectorAll(
-            ".event-register"
-        );
+        document.querySelectorAll(".event-register");
 
 
     eventButtons.forEach(function (button) {
@@ -468,7 +477,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // =========================================================
-    // CONTACT FORM
+    // 12. CONTACT FORM
     // =========================================================
 
     const contactForm =
@@ -498,7 +507,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // =========================================================
-    // LOGIN FORM
+    // 13. LOGIN FORM
     // =========================================================
 
     const loginForm =
@@ -515,14 +524,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
                 const emailInput =
-                    document.getElementById(
-                        "loginEmail"
-                    );
+                    document.getElementById("loginEmail");
 
                 const passwordInput =
-                    document.getElementById(
-                        "loginPassword"
-                    );
+                    document.getElementById("loginPassword");
 
 
                 const email =
@@ -568,7 +573,179 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // =========================================================
-    // FINAL MESSAGE
+    // 14. NOTIFICATION BUTTON
+    // STUDENT ANNOUNCEMENTS
+    // =========================================================
+
+    const notificationBtn =
+        document.getElementById("notificationBtn");
+
+    const notificationBox =
+        document.getElementById("notificationBox");
+
+    const closeNotification =
+        document.getElementById("closeNotification");
+
+
+    // =========================================================
+    // OPEN NOTIFICATION BOX
+    // =========================================================
+
+    if (
+        notificationBtn &&
+        notificationBox
+    ) {
+
+        notificationBtn.addEventListener(
+            "click",
+            function (event) {
+
+                event.stopPropagation();
+
+                notificationBox.classList.toggle(
+                    "show"
+                );
+
+            }
+        );
+
+    }
+
+
+    // =========================================================
+    // CLOSE NOTIFICATION BOX
+    // =========================================================
+
+    if (
+        closeNotification &&
+        notificationBox
+    ) {
+
+        closeNotification.addEventListener(
+            "click",
+            function (event) {
+
+                event.stopPropagation();
+
+                notificationBox.classList.remove(
+                    "show"
+                );
+
+            }
+        );
+
+    }
+
+
+    // =========================================================
+    // CLOSE NOTIFICATION WHEN CLICKING OUTSIDE
+    // =========================================================
+
+    document.addEventListener(
+        "click",
+        function (event) {
+
+            if (
+                notificationBox &&
+                notificationBtn &&
+                !notificationBox.contains(event.target) &&
+                !notificationBtn.contains(event.target)
+            ) {
+
+                notificationBox.classList.remove(
+                    "show"
+                );
+
+            }
+
+        }
+    );
+
+
+    // =========================================================
+    // 15. MOBILE HAMBURGER MENU
+    // =========================================================
+
+    const hamburgerBtn =
+        document.getElementById("hamburgerBtn");
+
+    const navMenu =
+        document.querySelector(".nav");
+
+
+    if (hamburgerBtn && navMenu) {
+
+        hamburgerBtn.addEventListener(
+            "click",
+            function () {
+
+                navMenu.classList.toggle(
+                    "mobile-menu-open"
+                );
+
+
+                if (
+                    navMenu.classList.contains(
+                        "mobile-menu-open"
+                    )
+                ) {
+
+                    hamburgerBtn.textContent = "×";
+
+                    hamburgerBtn.setAttribute(
+                        "aria-label",
+                        "Close menu"
+                    );
+
+                } else {
+
+                    hamburgerBtn.textContent = "☰";
+
+                    hamburgerBtn.setAttribute(
+                        "aria-label",
+                        "Open menu"
+                    );
+
+                }
+
+            }
+        );
+
+
+        // Close menu when link is clicked
+
+        navMenu.querySelectorAll("a").forEach(
+            function (link) {
+
+                link.addEventListener(
+                    "click",
+                    function () {
+
+                        navMenu.classList.remove(
+                            "mobile-menu-open"
+                        );
+
+
+                        hamburgerBtn.textContent =
+                            "☰";
+
+
+                        hamburgerBtn.setAttribute(
+                            "aria-label",
+                            "Open menu"
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+    }
+
+
+    // =========================================================
+    // 16. FINAL MESSAGE
     // =========================================================
 
     console.log(

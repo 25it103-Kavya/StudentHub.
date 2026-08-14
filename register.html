@@ -1,66 +1,653 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Register | StudentHub</title>
-  <link rel="stylesheet" href="style.css">
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Register | StudentHub</title>
+
+    <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
 
-<nav>
-  
-  <button id="themeBtn">🌙 Dark Mode</button>
-  <a class="brand" href="index.html">Student<span>Hub</span></a>
 
-  <div>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="events.html">Events</a>
-    <a href="contact.html">Contact</a>
-    <a href="login.html">Login</a>
-  </div>
-</nav>
+<!-- =====================================================
+     HEADER
+====================================================== -->
+
+<header class="header">
+
+    <div class="container">
+
+
+        <!-- =================================================
+             LEFT SIDE BUTTONS
+        ================================================== -->
+
+        <div class="header-left">
+
+
+            <!-- DARK / LIGHT MODE -->
+
+            <button
+                id="darkModeBtn"
+                class="dark-mode-btn nav-btn"
+                type="button"
+                aria-label="Toggle dark mode">
+
+                🌙 Dark Mode
+
+            </button>
+
+
+            <!-- CHANGE HEADING -->
+
+            <button
+                id="changeHeadingBtn"
+                class="change-heading-btn nav-btn"
+                type="button"
+                aria-label="Change heading">
+
+                Change Heading
+
+            </button>
+
+
+            <!-- NOTIFICATIONS -->
+
+            <button
+                id="notificationBtn"
+                class="notification-btn nav-btn"
+                type="button"
+                aria-label="Open notifications">
+
+                🔔 Notifications
+
+            </button>
+
+
+        </div>
+
+
+        <!-- =================================================
+             CENTER LOGO
+        ================================================== -->
+
+        <h2
+            class="logo"
+            id="logoText">
+
+            <span
+                id="logoIcon"
+                class="logo-icon">
+            </span>
+
+            StudentHub
+
+        </h2>
+
+
+        <!-- =================================================
+             RIGHT SIDE NAVIGATION
+        ================================================== -->
+
+        <nav
+            class="nav"
+            id="desktopNav"
+            aria-label="Main navigation">
+
+
+            <a href="index.html">
+                Home
+            </a>
+
+
+            <a href="about.html">
+                About
+            </a>
+
+
+            <a href="events.html">
+                Events
+            </a>
+
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+
+            <a href="login.html">
+                Login
+            </a>
+
+
+        </nav>
+
+
+        <!-- =================================================
+             HAMBURGER BUTTON
+        ================================================== -->
+
+        <button
+            class="hamburger-btn"
+            id="hamburgerBtn"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false">
+
+            ☰
+
+        </button>
+
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     MOBILE MENU
+====================================================== -->
+
+<div
+    class="mobile-menu"
+    id="mobileMenu"
+    aria-hidden="true">
+
+
+    <!-- MOBILE MENU HEADER -->
+
+    <div class="mobile-menu-header">
+
+
+        <div class="mobile-menu-logo">
+
+            <span
+                id="mobileLogoIcon"
+                class="logo-icon">
+            </span>
+
+            StudentHub
+
+        </div>
+
+
+        <button
+            class="mobile-menu-close"
+            id="mobileMenuClose"
+            type="button"
+            aria-label="Close menu">
+
+            ×
+
+        </button>
+
+
+    </div>
+
+
+
+    <!-- MOBILE NAVIGATION -->
+
+    <nav
+        class="mobile-nav"
+        aria-label="Mobile navigation">
+
+
+        <a href="index.html">
+            Home
+        </a>
+
+
+        <a href="about.html">
+            About
+        </a>
+
+
+        <a href="events.html">
+            Events
+        </a>
+
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+
+        <a href="login.html">
+            Login
+        </a>
+
+
+    </nav>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     NOTIFICATION BOX
+====================================================== -->
+
+<div
+    id="notificationBox"
+    class="notification-box">
+
+
+    <div class="notification-header">
+
+
+        <h3>
+            Student Announcements
+        </h3>
+
+
+        <button
+            id="closeNotification"
+            class="notification-close"
+            type="button"
+            aria-label="Close announcements">
+
+            ×
+
+        </button>
+
+
+    </div>
+
+
+
+    <div class="announcement-item">
+
+
+        <strong>
+            📢 Important Notice
+        </strong>
+
+
+        <p>
+            Mid-semester examination schedule
+            has been updated.
+        </p>
+
+
+    </div>
+
+
+
+    <div class="announcement-item">
+
+
+        <strong>
+            🎓 Event Announcement
+        </strong>
+
+
+        <p>
+            Techfest registration is now open
+            for students.
+        </p>
+
+
+    </div>
+
+
+
+    <div class="announcement-item">
+
+
+        <strong>
+            📚 Academic Update
+        </strong>
+
+
+        <p>
+            New study materials are available
+            in the student portal.
+        </p>
+
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     REGISTER SECTION
+====================================================== -->
 
 <main class="container">
-  <form class="form-card" data-message="Registration successful!">
 
-    <h2>Create Student Account</h2>
 
-    <div class="field">
-      <label>Full Name</label>
-      <input type="text" placeholder="Enter your name" required>
-    </div>
+    <form
+        class="form-card"
+        data-message="Registration successful!">
 
-    <div class="field">
-      <label>Email</label>
-      <input type="email" placeholder="student@example.com" required>
-    </div>
 
-    <div class="field">
-      <label>Course</label>
-      <select required>
-        <option value="">Select course</option>
-        <option>Information Technology</option>
-        <option>Computer Science</option>
-        <option>Business Administration</option>
-        <option>Electronics Engineering</option>
-      </select>
-    </div>
+        <h2>
+            Create Student Account
+        </h2>
 
-    <div class="field">
-      <label>Password</label>
-      <input type="password" placeholder="Create password" required>
-    </div>
 
-    <button class="btn" type="submit">Register</button>
-  </form>
+        <!-- =================================================
+             FULL NAME
+        ================================================== -->
+
+        <div class="field">
+
+
+            <label for="fullName">
+                Full Name
+            </label>
+
+
+            <input
+                type="text"
+                id="fullName"
+                name="fullName"
+                placeholder="Enter your name"
+                required>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             EMAIL
+        ================================================== -->
+
+        <div class="field">
+
+
+            <label for="email">
+                Email
+            </label>
+
+
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="student@example.com"
+                required>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             COURSE
+        ================================================== -->
+
+        <div class="field">
+
+
+            <label for="course">
+                Course
+            </label>
+
+
+            <select
+                id="course"
+                name="course"
+                required>
+
+
+                <option value="">
+                    Select course
+                </option>
+
+
+                <option>
+                    Information Technology
+                </option>
+
+
+                <option>
+                    Computer Science
+                </option>
+
+
+                <option>
+                    Business Administration
+                </option>
+
+
+                <option>
+                    Electronics Engineering
+                </option>
+
+
+            </select>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             PASSWORD
+        ================================================== -->
+
+        <div class="field">
+
+
+            <label for="password">
+                Password
+            </label>
+
+
+            <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Create password"
+                minlength="6"
+                required>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             REGISTER BUTTON
+        ================================================== -->
+
+        <button
+            class="btn"
+            type="submit">
+
+            Register
+
+        </button>
+
+
+        <!-- =================================================
+             LOGIN LINK
+        ================================================== -->
+
+        <div class="login-links">
+
+
+            <p>
+
+                Already have an account?
+
+
+                <a href="login.html">
+                    Login here
+                </a>
+
+
+            </p>
+
+
+        </div>
+
+
+    </form>
+
+
 </main>
 
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
 <footer class="footer">
-  © <span id="year"></span> StudentHub Portal
+
+
+    <p>
+
+        © <span id="year"></span>
+        StudentHub Portal
+
+    </p>
+
+
 </footer>
 
+
+
+<!-- =====================================================
+     MAIN JAVASCRIPT
+====================================================== -->
+
 <script src="js/script.js"></script>
+
+
+
+<!-- =====================================================
+     MOBILE MENU JAVASCRIPT
+====================================================== -->
+
+<script>
+
+
+    /* =====================================================
+       GET ELEMENTS
+    ====================================================== */
+
+    const hamburgerBtn =
+        document.getElementById("hamburgerBtn");
+
+
+    const mobileMenu =
+        document.getElementById("mobileMenu");
+
+
+    const mobileMenuClose =
+        document.getElementById("mobileMenuClose");
+
+
+
+    /* =====================================================
+       OPEN MOBILE MENU
+    ====================================================== */
+
+    if (hamburgerBtn && mobileMenu) {
+
+        hamburgerBtn.addEventListener(
+            "click",
+            function () {
+
+                mobileMenu.classList.add("show");
+
+                mobileMenu.setAttribute(
+                    "aria-hidden",
+                    "false"
+                );
+
+                hamburgerBtn.setAttribute(
+                    "aria-expanded",
+                    "true"
+                );
+
+            }
+        );
+
+    }
+
+
+
+    /* =====================================================
+       CLOSE MOBILE MENU
+    ====================================================== */
+
+    if (mobileMenuClose && mobileMenu) {
+
+        mobileMenuClose.addEventListener(
+            "click",
+            function () {
+
+                mobileMenu.classList.remove("show");
+
+                mobileMenu.setAttribute(
+                    "aria-hidden",
+                    "true"
+                );
+
+                hamburgerBtn.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+        );
+
+    }
+
+
+
+    /* =====================================================
+       CLOSE MENU AFTER CLICKING A LINK
+    ====================================================== */
+
+    document
+        .querySelectorAll(".mobile-nav a")
+        .forEach(function (link) {
+
+            link.addEventListener(
+                "click",
+                function () {
+
+                    mobileMenu.classList.remove("show");
+
+                    mobileMenu.setAttribute(
+                        "aria-hidden",
+                        "true"
+                    );
+
+                    hamburgerBtn.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                }
+            );
+
+        });
+
+
+</script>
+
+
 </body>
+
 </html>

@@ -10,11 +10,9 @@
 
     <title>About | StudentHub</title>
 
-    <!-- Main Website CSS -->
     <link rel="stylesheet" href="style.css">
 
 </head>
-
 
 <body>
 
@@ -28,58 +26,196 @@
     <div class="container">
 
 
-        <!-- Dark / Light Mode Button -->
+        <!-- LEFT SIDE BUTTONS -->
 
-        <button
-            id="darkModeBtn"
-            class="dark-mode-btn"
-            type="button"
-            aria-label="Toggle dark mode">
+        <div class="header-buttons">
 
-            🌙 Dark Mode
+            <button
+                id="changeHeadingBtn"
+                class="change-heading-btn nav-btn"
+                type="button"
+                aria-label="Change heading">
 
-        </button>
+                Change Heading
+
+            </button>
 
 
-        <!-- Logo -->
+            <button
+                id="notificationBtn"
+                class="notification-btn nav-btn"
+                type="button"
+                aria-label="Open notifications">
 
-        <h2 class="logo">
+                🔔 Notifications
+
+            </button>
+
+
+            <button
+                id="darkModeBtn"
+                class="dark-mode-btn nav-btn"
+                type="button"
+                aria-label="Toggle dark mode">
+
+                🌙 Dark Mode
+
+            </button>
+
+        </div>
+
+
+        <!-- CENTER LOGO -->
+
+        <h2
+            class="logo"
+            id="logoText">
+
+            <span
+                id="logoIcon"
+                class="logo-icon">
+            </span>
+
             StudentHub
+
         </h2>
 
 
-        <!-- Navigation -->
+        <!-- RIGHT SIDE NAVIGATION -->
 
         <nav
             class="nav"
+            id="mainNav"
             aria-label="Main navigation">
+
 
             <a href="index.html">
                 Home
             </a>
 
+
             <a href="about.html">
                 About
             </a>
+
 
             <a href="events.html">
                 Events
             </a>
 
+
             <a href="contact.html">
                 Contact
             </a>
+
 
             <a href="login.html">
                 Login
             </a>
 
+
         </nav>
+
+
+        <!-- MOBILE HAMBURGER -->
+
+        <button
+            class="hamburger-btn"
+            id="hamburgerBtn"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false">
+
+            ☰
+
+        </button>
 
     </div>
 
 </header>
 
+
+<!-- =========================================================
+     MOBILE MENU
+========================================================= -->
+
+<div
+    class="mobile-menu"
+    id="mobileMenu"
+    aria-hidden="true">
+
+
+    <div class="mobile-menu-header">
+
+
+        <div class="mobile-menu-logo">
+
+            <span
+                id="mobileLogoIcon"
+                class="logo-icon">
+            </span>
+
+            StudentHub
+
+        </div>
+
+
+        <button
+            class="mobile-menu-close"
+            id="mobileMenuClose"
+            type="button"
+            aria-label="Close menu">
+
+            ×
+
+        </button>
+
+    </div>
+
+
+    <nav
+        class="mobile-nav"
+        aria-label="Mobile navigation">
+
+
+        <a href="index.html">
+            Home
+        </a>
+
+
+        <a href="about.html">
+            About
+        </a>
+
+
+        <a href="events.html">
+            Events
+        </a>
+
+
+        <a href="dashboard.html">
+            Dashboard
+        </a>
+
+
+        <a href="profile.html">
+            Profile
+        </a>
+
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+
+        <a href="login.html">
+            Login
+        </a>
+
+
+    </nav>
+
+</div>
 
 
 <!-- =========================================================
@@ -92,21 +228,23 @@
 
         <div class="hero-content">
 
+
             <h1>
                 About StudentHub
             </h1>
+
 
             <p>
                 Connecting students, academics and campus life
                 in one simple digital platform.
             </p>
 
+
         </div>
 
     </div>
 
 </section>
-
 
 
 <!-- =========================================================
@@ -118,17 +256,18 @@
     <div class="container">
 
 
-        <!-- =================================================
-             OUR MISSION
-        ================================================== -->
+        <!-- OUR MISSION -->
 
         <div class="card">
+
 
             <h3>
                 Our Mission
             </h3>
 
+
             <p>
+
                 StudentHub was designed to streamline academic
                 life and vibrant campus culture into a unified
                 digital experience. We empower students to
@@ -136,51 +275,60 @@
                 manage profiles, discover interactive campus
                 events, and collaborate directly with peers
                 and organizations.
+
             </p>
+
 
         </div>
 
 
-
-        <!-- =================================================
-             VISION + WHY STUDENTHUB
-        ================================================== -->
+        <!-- VISION + WHY STUDENTHUB -->
 
         <div class="grid-2">
 
 
-            <!-- Vision -->
+            <!-- VISION -->
 
             <div class="card">
+
 
                 <h3>
                     Our Vision
                 </h3>
 
+
                 <p>
+
                     To build an interconnected and engaging
                     university ecosystem where every student
                     stays informed, active, and supported
                     throughout their academic journey.
+
                 </p>
+
 
             </div>
 
 
-            <!-- Why StudentHub -->
+            <!-- WHY STUDENTHUB -->
 
             <div class="card">
+
 
                 <h3>
                     Why StudentHub?
                 </h3>
 
+
                 <p>
+
                     Say goodbye to cluttered email threads and
                     scattered bulletin boards. StudentHub
                     centralizes your essential campus activities
                     into one intuitive dashboard.
+
                 </p>
+
 
             </div>
 
@@ -188,12 +336,10 @@
         </div>
 
 
-
-        <!-- =================================================
-             STUDENTHUB AT A GLANCE
-        ================================================== -->
+        <!-- STUDENTHUB AT A GLANCE -->
 
         <div class="card">
+
 
             <h3>
                 StudentHub At A Glance
@@ -203,52 +349,62 @@
             <div class="stats-container">
 
 
-                <!-- Centralized -->
+                <!-- CENTRALIZED -->
 
                 <div class="stat-box">
+
 
                     <h3>
                         Centralized
                     </h3>
 
+
                     <p>
                         All updates in one place
                     </p>
 
+
                 </div>
 
 
-                <!-- Interactive -->
+                <!-- INTERACTIVE -->
 
                 <div class="stat-box">
+
 
                     <h3>
                         Interactive
                     </h3>
 
+
                     <p>
                         Easy event participation
                     </p>
 
+
                 </div>
 
 
-                <!-- Connected -->
+                <!-- CONNECTED -->
 
                 <div class="stat-box">
+
 
                     <h3>
                         Connected
                     </h3>
 
+
                     <p>
                         Direct peer communication
                     </p>
+
 
                 </div>
 
 
             </div>
+
 
         </div>
 
@@ -256,7 +412,6 @@
     </div>
 
 </main>
-
 
 
 <!-- =========================================================
@@ -275,12 +430,109 @@
 </footer>
 
 
-
 <!-- =========================================================
      JAVASCRIPT
 ========================================================= -->
 
 <script src="js/script.js"></script>
+
+
+<!-- =========================================================
+     MOBILE MENU JAVASCRIPT
+========================================================= -->
+
+<script>
+
+    const hamburgerBtn =
+        document.getElementById("hamburgerBtn");
+
+    const mobileMenu =
+        document.getElementById("mobileMenu");
+
+    const mobileMenuClose =
+        document.getElementById("mobileMenuClose");
+
+
+    /* OPEN MOBILE MENU */
+
+    if (hamburgerBtn && mobileMenu) {
+
+        hamburgerBtn.addEventListener(
+            "click",
+            function () {
+
+                mobileMenu.classList.add("show");
+
+                mobileMenu.setAttribute(
+                    "aria-hidden",
+                    "false"
+                );
+
+                hamburgerBtn.setAttribute(
+                    "aria-expanded",
+                    "true"
+                );
+
+            }
+        );
+
+    }
+
+
+    /* CLOSE MOBILE MENU */
+
+    if (mobileMenuClose && mobileMenu) {
+
+        mobileMenuClose.addEventListener(
+            "click",
+            function () {
+
+                mobileMenu.classList.remove("show");
+
+                mobileMenu.setAttribute(
+                    "aria-hidden",
+                    "true"
+                );
+
+                hamburgerBtn.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+        );
+
+    }
+
+
+    /* CLOSE MENU AFTER CLICKING LINK */
+
+    document
+        .querySelectorAll(".mobile-nav a")
+        .forEach(function (link) {
+
+            link.addEventListener(
+                "click",
+                function () {
+
+                    mobileMenu.classList.remove("show");
+
+                    mobileMenu.setAttribute(
+                        "aria-hidden",
+                        "true"
+                    );
+
+                    hamburgerBtn.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                }
+            );
+
+        });
+
+</script>
 
 
 </body>

@@ -1,87 +1,545 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Panel | StudentHub</title>
-  <link rel="stylesheet" href="style.css">
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Panel | StudentHub</title>
+
+    <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
 
-<nav>
 
-  <button id="themeBtn">🌙 Dark Mode</button>
+<!-- =====================================================
+     HEADER
+====================================================== -->
 
-  <a class="brand" href="index.html">Student<span>Hub</span></a>
+<header class="header">
 
-  <div>
-    <a href="dashboard.html">Dashboard</a>
-    <a href="events.html">Events</a>
-    <a href="index.html">Logout</a>
-  </div>
-</nav>
+    <div class="container">
 
-<section class="section container">
-  <h1>Admin Panel</h1>
 
-  <div class="stats">
-    <div class="stat">
-      <h2>248</h2>
-      <p>Total Students</p>
+        <!-- =================================================
+             LEFT SIDE HEADER BUTTONS
+        ================================================== -->
+
+        <div class="header-buttons">
+
+            <!-- CHANGE HEADING -->
+
+            <button
+                id="changeHeadingBtn"
+                class="change-heading-btn nav-btn"
+                type="button"
+                aria-label="Change logo heading">
+
+                Change Heading
+
+            </button>
+
+
+            <!-- NOTIFICATIONS -->
+
+            <button
+                id="notificationBtn"
+                class="notification-btn nav-btn"
+                type="button"
+                aria-label="Open student announcements">
+
+                🔔 Notifications
+
+            </button>
+
+
+            <!-- DARK MODE -->
+
+            <button
+                id="darkModeBtn"
+                class="dark-mode-btn nav-btn"
+                type="button"
+                aria-label="Toggle dark mode">
+
+                🌙 Dark Mode
+
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             CENTER LOGO
+        ================================================== -->
+
+        <h2
+            class="logo"
+            id="logoText">
+
+            <span
+                id="logoIcon"
+                class="logo-icon">
+            </span>
+
+            StudentHub
+
+        </h2>
+
+
+        <!-- =================================================
+             RIGHT SIDE NAVIGATION
+        ================================================== -->
+
+        <nav
+            class="nav"
+            id="mainNav"
+            aria-label="Main navigation">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="events.html">
+                Events
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+            <a href="login.html">
+                Login
+            </a>
+
+        </nav>
+
+
+        <!-- =================================================
+             HAMBURGER BUTTON
+        ================================================== -->
+
+        <button
+            class="hamburger-btn"
+            id="hamburgerBtn"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false">
+
+            ☰
+
+        </button>
+
     </div>
 
-    <div class="stat">
-      <h2>18</h2>
-      <p>Total Events</p>
+</header>
+
+
+<!-- =====================================================
+     MOBILE MENU
+====================================================== -->
+
+<div
+    class="mobile-menu"
+    id="mobileMenu"
+    aria-hidden="true">
+
+
+    <!-- MOBILE MENU HEADER -->
+
+    <div class="mobile-menu-header">
+
+        <div class="mobile-menu-logo">
+
+            <span
+                id="mobileLogoIcon"
+                class="logo-icon">
+            </span>
+
+            StudentHub
+
+        </div>
+
+
+        <button
+            class="mobile-menu-close"
+            id="mobileMenuClose"
+            type="button"
+            aria-label="Close menu">
+
+            ×
+
+        </button>
+
     </div>
 
-    <div class="stat">
-      <h2>36</h2>
-      <p>Feedback Items</p>
-    </div>
-  </div>
 
-  <h2>Student Records</h2>
+    <!-- MOBILE NAVIGATION -->
 
-  <table>
-    <thead>
-      <tr>
-        <th>Student Name</th>
-        <th>Course</th>
-        <th>Email</th>
-        <th>Status</th>
-      </tr>
-    </thead>
+    <nav
+        class="mobile-nav"
+        aria-label="Mobile navigation">
 
-    <tbody>
-      <tr>
-        <td>Kavya Sharma</td>
-        <td>Information Technology</td>
-        <td>kavya@example.com</td>
-        <td>Active</td>
-      </tr>
+        <a href="index.html">
+            Home
+        </a>
 
-      <tr>
-        <td>Aarav Kumar</td>
-        <td>Computer Science</td>
-        <td>aarav@example.com</td>
-        <td>Active</td>
-      </tr>
+        <a href="about.html">
+            About
+        </a>
 
-      <tr>
-        <td>Riya Patel</td>
-        <td>Business Administration</td>
-        <td>riya@example.com</td>
-        <td>Active</td>
-      </tr>
-    </tbody>
-  </table>
-</section>
+        <a href="events.html">
+            Events
+        </a>
+
+        <a href="dashboard.html">
+            Dashboard
+        </a>
+
+        <a href="profile.html">
+            Profile
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+        <a href="feedback.html">
+            Feedback
+        </a>
+
+        <a href="faq.html">
+            FAQ
+        </a>
+
+        <a href="admin.html">
+            Admin
+        </a>
+
+        <a href="login.html">
+            Login
+        </a>
+
+    </nav>
+
+</div>
+
+
+<!-- =====================================================
+     ADMIN PANEL
+====================================================== -->
+
+<main>
+
+    <section class="section container">
+
+
+        <!-- PAGE TITLE -->
+
+        <h1>
+            Admin Panel
+        </h1>
+
+
+        <!-- =================================================
+             STATISTICS
+        ================================================== -->
+
+        <div class="stats">
+
+
+            <!-- TOTAL STUDENTS -->
+
+            <div class="stat">
+
+                <h2>
+                    248
+                </h2>
+
+                <p>
+                    Total Students
+                </p>
+
+            </div>
+
+
+            <!-- TOTAL EVENTS -->
+
+            <div class="stat">
+
+                <h2>
+                    18
+                </h2>
+
+                <p>
+                    Total Events
+                </p>
+
+            </div>
+
+
+            <!-- FEEDBACK -->
+
+            <div class="stat">
+
+                <h2>
+                    36
+                </h2>
+
+                <p>
+                    Feedback Items
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             STUDENT RECORDS
+        ================================================== -->
+
+        <h2>
+            Student Records
+        </h2>
+
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        Student Name
+                    </th>
+
+                    <th>
+                        Course
+                    </th>
+
+                    <th>
+                        Email
+                    </th>
+
+                    <th>
+                        Status
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+
+                <!-- STUDENT 1 -->
+
+                <tr>
+
+                    <td>
+                        Kavya Sharma
+                    </td>
+
+                    <td>
+                        Information Technology
+                    </td>
+
+                    <td>
+                        kavya@example.com
+                    </td>
+
+                    <td>
+                        Active
+                    </td>
+
+                </tr>
+
+
+                <!-- STUDENT 2 -->
+
+                <tr>
+
+                    <td>
+                        Aarav Kumar
+                    </td>
+
+                    <td>
+                        Computer Science
+                    </td>
+
+                    <td>
+                        aarav@example.com
+                    </td>
+
+                    <td>
+                        Active
+                    </td>
+
+                </tr>
+
+
+                <!-- STUDENT 3 -->
+
+                <tr>
+
+                    <td>
+                        Riya Patel
+                    </td>
+
+                    <td>
+                        Business Administration
+                    </td>
+
+                    <td>
+                        riya@example.com
+                    </td>
+
+                    <td>
+                        Active
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
 
 <footer class="footer">
-  © <span id="year"></span> StudentHub Portal
+
+    <p>
+
+        © <span id="year"></span>
+        StudentHub Portal
+
+    </p>
+
 </footer>
 
+
+<!-- =====================================================
+     MAIN JAVASCRIPT
+====================================================== -->
+
 <script src="js/script.js"></script>
+
+
+<!-- =====================================================
+     MOBILE MENU JAVASCRIPT
+====================================================== -->
+
+<script>
+
+    const hamburgerBtn =
+        document.getElementById("hamburgerBtn");
+
+    const mobileMenu =
+        document.getElementById("mobileMenu");
+
+    const mobileMenuClose =
+        document.getElementById("mobileMenuClose");
+
+
+    /* OPEN MOBILE MENU */
+
+    if (hamburgerBtn && mobileMenu) {
+
+        hamburgerBtn.addEventListener(
+            "click",
+            function () {
+
+                mobileMenu.classList.add("show");
+
+                mobileMenu.setAttribute(
+                    "aria-hidden",
+                    "false"
+                );
+
+                hamburgerBtn.setAttribute(
+                    "aria-expanded",
+                    "true"
+                );
+
+            }
+        );
+
+    }
+
+
+    /* CLOSE MOBILE MENU */
+
+    if (mobileMenuClose && mobileMenu) {
+
+        mobileMenuClose.addEventListener(
+            "click",
+            function () {
+
+                mobileMenu.classList.remove("show");
+
+                mobileMenu.setAttribute(
+                    "aria-hidden",
+                    "true"
+                );
+
+                hamburgerBtn.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+        );
+
+    }
+
+
+    /* CLOSE MENU AFTER CLICKING A LINK */
+
+    document
+        .querySelectorAll(".mobile-nav a")
+        .forEach(function (link) {
+
+            link.addEventListener(
+                "click",
+                function () {
+
+                    mobileMenu.classList.remove("show");
+
+                    mobileMenu.setAttribute(
+                        "aria-hidden",
+                        "true"
+                    );
+
+                    hamburgerBtn.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                }
+            );
+
+        });
+
+</script>
+
+
 </body>
+
 </html>

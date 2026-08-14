@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta name="viewport"
@@ -9,239 +10,554 @@
 
     <title>Contact | StudentHub</title>
 
-    <!-- IMPORTANT: CSS file -->
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-    <!-- ================= HEADER ================= -->
 
-    <header class="header">
+<!-- =====================================================
+     HEADER
+====================================================== -->
 
-        <div class="container">
+<header class="header">
+
+    <div class="container">
+
+
+        <!-- LEFT SIDE HEADER BUTTONS -->
+
+        <div class="header-buttons">
+
+            <button
+                id="changeHeadingBtn"
+                class="change-heading-btn nav-btn"
+                type="button"
+                aria-label="Change logo heading">
+
+                Change Heading
+
+            </button>
+
+
+            <button
+                id="notificationBtn"
+                class="notification-btn nav-btn"
+                type="button"
+                aria-label="Open student announcements">
+
+                🔔 Notifications
+
+            </button>
+
 
             <button
                 id="darkModeBtn"
-                class="dark-mode-btn"
-                type="button">
+                class="dark-mode-btn nav-btn"
+                type="button"
+                aria-label="Toggle dark mode">
+
                 🌙 Dark Mode
+
             </button>
-
-            <a href="index.html" class="brand">
-                StudentHub
-            </a>
-
-            <nav class="nav">
-
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="events.html">Events</a>
-                <a href="contact.html">Contact</a>
-                <a href="login.html">Login</a>
-
-            </nav>
 
         </div>
 
-    </header>
+
+        <!-- CENTER LOGO -->
+
+        <h2
+            class="logo"
+            id="logoText">
+
+            <span
+                id="logoIcon"
+                class="logo-icon">
+            </span>
+
+            StudentHub
+
+        </h2>
 
 
-    <!-- ================= CONTACT PAGE ================= -->
+        <!-- RIGHT SIDE NAVIGATION -->
 
-    <main>
+        <nav
+            class="nav"
+            id="mainNav"
+            aria-label="Main navigation">
 
-        <section class="section contact-section">
+            <a href="index.html">
+                Home
+            </a>
 
-            <div class="container">
+            <a href="about.html">
+                About
+            </a>
 
-                <div class="contact-heading">
+            <a href="events.html">
+                Events
+            </a>
 
-                    <h1>Contact Us</h1>
+            <a href="contact.html">
+                Contact
+            </a>
 
-                    <p>
-                        Have a question or suggestion?
-                        We would love to hear from you.
+            <a href="login.html">
+                Login
+            </a>
+
+        </nav>
+
+
+        <!-- HAMBURGER BUTTON -->
+
+        <button
+            class="hamburger-btn"
+            id="hamburgerBtn"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false">
+
+            ☰
+
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     MOBILE MENU
+====================================================== -->
+
+<div
+    class="mobile-menu"
+    id="mobileMenu"
+    aria-hidden="true">
+
+
+    <div class="mobile-menu-header">
+
+        <div class="mobile-menu-logo">
+
+            <span
+                id="mobileLogoIcon"
+                class="logo-icon">
+            </span>
+
+            StudentHub
+
+        </div>
+
+
+        <button
+            class="mobile-menu-close"
+            id="mobileMenuClose"
+            type="button"
+            aria-label="Close menu">
+
+            ×
+
+        </button>
+
+    </div>
+
+
+    <nav
+        class="mobile-nav"
+        aria-label="Mobile navigation">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="events.html">
+            Events
+        </a>
+
+        <a href="dashboard.html">
+            Dashboard
+        </a>
+
+        <a href="profile.html">
+            Profile
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+        <a href="login.html">
+            Login
+        </a>
+
+    </nav>
+
+</div>
+
+
+<!-- =====================================================
+     CONTACT PAGE
+====================================================== -->
+
+<main>
+
+    <section class="section contact-section">
+
+        <div class="container">
+
+
+            <!-- CONTACT HEADING -->
+
+            <div class="contact-heading">
+
+                <h1>
+                    Contact Us
+                </h1>
+
+                <p>
+                    Have a question or suggestion?
+                    We would love to hear from you.
+                </p>
+
+            </div>
+
+
+            <div class="contact-wrapper">
+
+
+                <!-- =================================================
+                     CONTACT INFORMATION
+                ================================================== -->
+
+                <div class="contact-info">
+
+                    <h2>
+                        Get in Touch
+                    </h2>
+
+                    <p class="contact-description">
+
+                        Feel free to contact us for any questions,
+                        suggestions, or information about StudentHub.
+
                     </p>
 
-                </div>
 
+                    <!-- EMAIL -->
 
-                <div class="contact-wrapper">
+                    <div class="contact-item">
 
-                    <!-- ===== CONTACT INFORMATION ===== -->
-
-                    <div class="contact-info">
-
-                        <h2>Get in Touch</h2>
-
-                        <p class="contact-description">
-                            Feel free to contact us for any questions,
-                            suggestions, or information about StudentHub.
-                        </p>
-
-
-                        <div class="contact-item">
-
-                            <div class="contact-icon">
-                                📧
-                            </div>
-
-                            <div>
-                                <h3>Email</h3>
-                                <p>
-                                    studenthub@charusat.ac.in
-                                </p>
-                            </div>
-
+                        <div class="contact-icon">
+                            📧
                         </div>
 
+                        <div>
 
-                        <div class="contact-item">
+                            <h3>
+                                Email
+                            </h3>
 
-                            <div class="contact-icon">
-                                📞
-                            </div>
-
-                            <div>
-                                <h3>Phone</h3>
-                                <p>
-                                    +91 12345 67890
-                                </p>
-                            </div>
-
-                        </div>
-
-
-                        <div class="contact-item">
-
-                            <div class="contact-icon">
-                                📍
-                            </div>
-
-                            <div>
-                                <h3>Location</h3>
-                                <p>
-                                    CHARUSAT University,
-                                    Changa, Gujarat
-                                </p>
-                            </div>
+                            <p>
+                                studenthub@charusat.ac.in
+                            </p>
 
                         </div>
 
                     </div>
 
 
-                    <!-- ===== CONTACT FORM ===== -->
+                    <!-- PHONE -->
 
-                    <form
-                        class="contact-form"
-                        id="contactForm">
+                    <div class="contact-item">
 
-                        <h2>Send Us a Message</h2>
+                        <div class="contact-icon">
+                            📞
+                        </div>
 
-                        <p class="form-description">
-                            Fill out the form below and we will get
-                            back to you soon.
-                        </p>
+                        <div>
 
+                            <h3>
+                                Phone
+                            </h3>
 
-                        <div class="field">
-
-                            <label for="contactName">
-                                Name
-                            </label>
-
-                            <input
-                                type="text"
-                                id="contactName"
-                                name="name"
-                                placeholder="Enter your name"
-                                required>
+                            <p>
+                                +91 12345 67890
+                            </p>
 
                         </div>
 
+                    </div>
 
-                        <div class="field">
 
-                            <label for="contactEmail">
-                                Email
-                            </label>
+                    <!-- LOCATION -->
 
-                            <input
-                                type="email"
-                                id="contactEmail"
-                                name="email"
-                                placeholder="Enter your email"
-                                required>
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            📍
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Location
+                            </h3>
+
+                            <p>
+                                CHARUSAT University,
+                                Changa, Gujarat
+                            </p>
 
                         </div>
 
-
-                        <div class="field">
-
-                            <label for="contactSubject">
-                                Subject
-                            </label>
-
-                            <input
-                                type="text"
-                                id="contactSubject"
-                                name="subject"
-                                placeholder="Enter subject"
-                                required>
-
-                        </div>
-
-
-                        <div class="field">
-
-                            <label for="contactMessage">
-                                Message
-                            </label>
-
-                            <textarea
-                                id="contactMessage"
-                                name="message"
-                                placeholder="Write your message here..."
-                                required></textarea>
-
-                        </div>
-
-
-                        <button
-                            class="btn contact-submit"
-                            type="submit">
-
-                            Send Message
-
-                        </button>
-
-                    </form>
+                    </div>
 
                 </div>
 
+
+                <!-- =================================================
+                     CONTACT FORM
+                ================================================== -->
+
+                <form
+                    class="contact-form"
+                    id="contactForm">
+
+
+                    <h2>
+                        Send Us a Message
+                    </h2>
+
+
+                    <p class="form-description">
+
+                        Fill out the form below and we will get
+                        back to you soon.
+
+                    </p>
+
+
+                    <!-- NAME -->
+
+                    <div class="field">
+
+                        <label for="contactName">
+                            Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="contactName"
+                            name="name"
+                            placeholder="Enter your name"
+                            required>
+
+                    </div>
+
+
+                    <!-- EMAIL -->
+
+                    <div class="field">
+
+                        <label for="contactEmail">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="contactEmail"
+                            name="email"
+                            placeholder="Enter your email"
+                            required>
+
+                    </div>
+
+
+                    <!-- SUBJECT -->
+
+                    <div class="field">
+
+                        <label for="contactSubject">
+                            Subject
+                        </label>
+
+                        <input
+                            type="text"
+                            id="contactSubject"
+                            name="subject"
+                            placeholder="Enter subject"
+                            required>
+
+                    </div>
+
+
+                    <!-- MESSAGE -->
+
+                    <div class="field">
+
+                        <label for="contactMessage">
+                            Message
+                        </label>
+
+                        <textarea
+                            id="contactMessage"
+                            name="message"
+                            placeholder="Write your message here..."
+                            required></textarea>
+
+                    </div>
+
+
+                    <!-- SUBMIT -->
+
+                    <button
+                        class="btn contact-submit"
+                        type="submit">
+
+                        Send Message
+
+                    </button>
+
+                </form>
+
+
             </div>
 
-        </section>
+        </div>
 
-    </main>
+    </section>
 
-
-    <!-- ================= FOOTER ================= -->
-
-    <footer class="footer">
-
-        <p>
-            © <span id="year"></span> StudentHub Portal
-        </p>
-
-    </footer>
+</main>
 
 
-    <!-- ================= JAVASCRIPT ================= -->
+<!-- =====================================================
+     FOOTER
+====================================================== -->
 
-    <script src="js/script.js"></script>
+<footer class="footer">
+
+    <p>
+
+        © <span id="year"></span>
+        StudentHub Portal
+
+    </p>
+
+</footer>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script src="js/script.js"></script>
+
+
+<!-- =====================================================
+     MOBILE MENU JAVASCRIPT
+====================================================== -->
+
+<script>
+
+    const hamburgerBtn =
+        document.getElementById("hamburgerBtn");
+
+    const mobileMenu =
+        document.getElementById("mobileMenu");
+
+    const mobileMenuClose =
+        document.getElementById("mobileMenuClose");
+
+
+    /* OPEN MOBILE MENU */
+
+    if (hamburgerBtn && mobileMenu) {
+
+        hamburgerBtn.addEventListener(
+            "click",
+            function () {
+
+                mobileMenu.classList.add("show");
+
+                mobileMenu.setAttribute(
+                    "aria-hidden",
+                    "false"
+                );
+
+                hamburgerBtn.setAttribute(
+                    "aria-expanded",
+                    "true"
+                );
+
+            }
+        );
+
+    }
+
+
+    /* CLOSE MOBILE MENU */
+
+    if (mobileMenuClose && mobileMenu) {
+
+        mobileMenuClose.addEventListener(
+            "click",
+            function () {
+
+                mobileMenu.classList.remove("show");
+
+                mobileMenu.setAttribute(
+                    "aria-hidden",
+                    "true"
+                );
+
+                hamburgerBtn.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+        );
+
+    }
+
+
+    /* CLOSE MENU AFTER CLICKING LINK */
+
+    document
+        .querySelectorAll(".mobile-nav a")
+        .forEach(function (link) {
+
+            link.addEventListener(
+                "click",
+                function () {
+
+                    mobileMenu.classList.remove("show");
+
+                    mobileMenu.setAttribute(
+                        "aria-hidden",
+                        "true"
+                    );
+
+                    hamburgerBtn.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                }
+            );
+
+        });
+
+</script>
+
 
 </body>
 
