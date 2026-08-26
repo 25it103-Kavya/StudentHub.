@@ -12,6 +12,25 @@
 
     <link rel="stylesheet" href="style.css">
 
+    <!-- Registration validation styles only. Existing style.css is unchanged. -->
+    <style>
+        .register-validation-error { display: none; margin-top: 6px; color: #d93025; font-size: 13px; font-weight: 600; line-height: 1.4; }
+        .register-validation-error.show { display: block; }
+        .register-invalid { border-color: #d93025 !important; }
+        .register-valid { border-color: #12a6b2 !important; }
+        .register-hint { display: block; margin-top: 5px; color: var(--muted-text); font-size: 12px; }
+        .register-gender-options { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 7px; }
+        .register-gender-options label { display: flex; align-items: center; gap: 6px; font-weight: 500; cursor: pointer; }
+        .register-gender-options input, .register-terms input { width: auto; }
+        .register-terms { display: flex !important; align-items: flex-start; gap: 8px; margin-bottom: 6px !important; cursor: pointer; }
+        .register-terms span { font-weight: 600; }
+        .password-strength-box { margin-top: 10px; }
+        .password-strength-label { display: flex; justify-content: space-between; gap: 10px; color: var(--muted-text); font-size: 12px; margin-bottom: 5px; }
+        .password-strength-bar { width: 100%; height: 7px; background: var(--light-blue); border-radius: 10px; overflow: hidden; }
+        #registerStrengthFill { width: 0%; height: 100%; border-radius: 10px; background: var(--blue); transition: width 0.25s ease; }
+        #registerStrengthText { color: var(--dark-blue); font-weight: 700; }
+    </style>
+
 </head>
 
 <body>
@@ -332,7 +351,9 @@
 
     <form
         class="form-card"
-        data-message="Registration successful!">
+        id="registrationForm"
+        data-message="Registration successful!"
+        novalidate>
 
 
         <h2>
@@ -360,6 +381,8 @@
                 required>
 
 
+            <span id="registerNameError" class="register-validation-error"></span>
+
         </div>
 
 
@@ -384,8 +407,38 @@
                 required>
 
 
+            <span id="registerEmailError" class="register-validation-error"></span>
+
         </div>
 
+
+
+        <!-- =================================================
+             MOBILE NUMBER
+        ================================================== -->
+
+        <div class="field">
+
+            <label for="mobile">
+                Mobile Number
+            </label>
+
+            <input
+                type="tel"
+                id="mobile"
+                name="mobile"
+                placeholder="Enter 10-digit mobile number"
+                maxlength="10"
+                inputmode="numeric"
+                required>
+
+            <span class="register-hint">
+                10 digits, starting with 6–9
+            </span>
+
+            <span id="registerMobileError" class="register-validation-error"></span>
+
+        </div>
 
 
         <!-- =================================================
@@ -433,9 +486,39 @@
 
             </select>
 
+            <span id="registerCourseError" class="register-validation-error"></span>
+
 
         </div>
 
+
+
+        <!-- =================================================
+             YEAR
+        ================================================== -->
+
+        <div class="field">
+
+            <label for="year">
+                Year
+            </label>
+
+            <select id="year" name="year" required>
+
+                <option value="">
+                    Select year
+                </option>
+
+                <option>First Year</option>
+                <option>Second Year</option>
+                <option>Third Year</option>
+                <option>Fourth Year</option>
+
+            </select>
+
+            <span id="registerYearError" class="register-validation-error"></span>
+
+        </div>
 
 
         <!-- =================================================
@@ -458,7 +541,83 @@
                 minlength="6"
                 required>
 
+            <span class="register-hint">
+                Minimum 8 characters with uppercase, lowercase, number and special character.
+            </span>
 
+            <div class="password-strength-box">
+                <div class="password-strength-label">
+                    <span>Password Strength</span>
+                    <strong id="registerStrengthText">Not started</strong>
+                </div>
+                <div class="password-strength-bar">
+                    <div id="registerStrengthFill"></div>
+                </div>
+            </div>
+
+            <span id="registerPasswordError" class="register-validation-error"></span>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             CONFIRM PASSWORD
+        ================================================== -->
+
+        <div class="field">
+
+            <label for="confirmPassword">
+                Confirm Password
+            </label>
+
+            <input
+                type="password"
+                id="confirmPassword"
+                name="confirmPassword"
+                placeholder="Re-enter your password"
+                required>
+
+            <span id="registerConfirmPasswordError" class="register-validation-error"></span>
+
+        </div>
+
+
+
+        <!-- =================================================
+             GENDER
+        ================================================== -->
+
+        <div class="field">
+
+            <label>
+                Gender
+            </label>
+
+            <div class="register-gender-options">
+                <label><input type="radio" name="gender" value="Male"> Male</label>
+                <label><input type="radio" name="gender" value="Female"> Female</label>
+                <label><input type="radio" name="gender" value="Other"> Other</label>
+            </div>
+
+            <span id="registerGenderError" class="register-validation-error"></span>
+
+        </div>
+
+
+
+        <!-- =================================================
+             TERMS & CONDITIONS
+        ================================================== -->
+
+        <div class="field">
+            <label class="register-terms">
+                <input type="checkbox" id="terms" name="terms">
+                <span>I agree to the Terms &amp; Conditions.</span>
+            </label>
+
+            <span id="registerTermsError" class="register-validation-error"></span>
         </div>
 
 
@@ -512,14 +671,10 @@
 
 <footer class="footer">
 
-
     <p>
-
-        © <span id="year"></span>
+        © <span id="currentYear"></span>
         StudentHub Portal
-
     </p>
-
 
 </footer>
 

@@ -2567,5 +2567,247 @@ html[data-theme="dark"] .announcement-item strong {
 
     .header .nav {
     display: none !important;
+    }
 }
+/* =========================================
+   REGISTER PAGE - BLUE + WHITE COMBINATION
+   ========================================= */
+
+/* 1. LIGHT BLUE PAGE BACKGROUND */
+body {
+    background: #e8f6f8;
+}
+
+
+/* 2. WHITE REGISTRATION BOX */
+#registrationForm {
+    background: #ffffff;
+    border: 2px solid #08747b;
+    box-shadow: 0 8px 25px rgba(8, 116, 123, 0.15);
+}
+
+
+/* 3. DARK BLUE HEADING */
+#registrationForm h1,
+#registrationForm h2 {
+    color: #075b63;
+}
+
+
+/* 4. DARK BLUE LABELS */
+#registrationForm label {
+    color: #174b52;
+    font-weight: 600;
+}
+
+
+/* 5. LIGHT BLUE INPUT BOXES */
+#registrationForm input,
+#registrationForm select {
+    background: #f1fafb;
+    color: #214b50;
+    border: 1px solid #12a6b2;
+}
+
+
+/* 6. TEAL/BLUE BORDER WHEN CLICKED */
+#registrationForm input:focus,
+#registrationForm select:focus {
+    background: #ffffff;
+    border-color: #08747b;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(18, 166, 178, 0.15);
+}
+
+
+/* 7. DARK BLUE REGISTER BUTTON */
+#registrationForm button {
+    background: #08747b;
+    color: #ffffff;
+    border: none;
+}
+
+
+/* 8. BRIGHT TEAL ON HOVER */
+#registrationForm button:hover {
+    background: #12a6b2;
+}
+/* =========================================================
+   REGISTER PAGE - LIGHT MODE
+   ========================================================= */
+
+body {
+    background: #e8f6f8;
+}
+
+/* Registration card */
+#registrationForm {
+    background: #ffffff;
+    border: 2px solid #08747b;
+    box-shadow: 0 8px 25px rgba(8, 116, 123, 0.15);
+}
+
+/* Heading */
+#registrationForm h1,
+#registrationForm h2 {
+    color: #075b63;
+}
+
+/* Labels */
+#registrationForm label {
+    color: #174b52;
+}
+
+/* Inputs and dropdowns */
+#registrationForm input,
+#registrationForm select {
+    background: #f1fafb;
+    color: #214b50;
+    border: 1px solid #12a6b2;
+}
+
+/* Input focus */
+#registrationForm input:focus,
+#registrationForm select:focus {
+    background: #ffffff;
+    border-color: #08747b;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(18, 166, 178, 0.15);
+}
+
+
+/* =========================================================
+   TERMS & CONDITIONS
+   ========================================================= */
+
+#registrationForm input[type="checkbox"] {
+    width: auto;
+    height: auto;
+    margin: 0;
+    accent-color: #08747b;
+}
+
+#registrationForm .terms,
+#registrationForm .terms-container,
+#registrationForm .terms-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+#registrationForm .terms label,
+#registrationForm .terms-container label,
+#registrationForm .terms-group label {
+    margin: 0;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   LOGIN LINK AT BOTTOM
+   ========================================================= */
+
+#registrationForm a {
+    color: #12a6b2;
+    font-weight: 600;
+}
+
+#registrationForm a:hover {
+    color: #08747b;
+}
+
+
+/* =========================================================
+   REGISTER BUTTON
+   ========================================================= */
+
+#registrationForm button {
+    background: #08747b;
+    color: #ffffff;
+    border: none;
+}
+
+#registrationForm button:hover {
+    background: #12a6b2;
+}
+
+
+/* =========================================================
+   DARK MODE - ENTIRE REGISTER PAGE
+   ========================================================= */
+
+html[data-theme="dark"] body {
+    background: #102f35;
+    color: #e8f6f8;
+}
+
+/* Dark registration card */
+html[data-theme="dark"] #registrationForm {
+    background: #173f46;
+    border: 2px solid #12a6b2;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+}
+
+/* Dark heading */
+html[data-theme="dark"] #registrationForm h1,
+html[data-theme="dark"] #registrationForm h2 {
+    color: #e8f6f8;
+}
+
+/* Dark labels */
+html[data-theme="dark"] #registrationForm label {
+    color: #d7f1f3;
+}
+
+/* Dark inputs */
+html[data-theme="dark"] #registrationForm input,
+html[data-theme="dark"] #registrationForm select {
+    background: #214f57;
+    color: #ffffff;
+    border: 1px solid #12a6b2;
+}
+
+/* Placeholder in dark mode */
+html[data-theme="dark"] #registrationForm input::placeholder {
+    color: #b8d3d6;
+}
+
+/* Dark input focus */
+html[data-theme="dark"] #registrationForm input:focus,
+html[data-theme="dark"] #registrationForm select:focus {
+    background: #285b63;
+    border-color: #63d5dc;
+    box-shadow: 0 0 0 3px rgba(18, 166, 178, 0.20);
+}
+
+/* Dark terms */
+html[data-theme="dark"] #registrationForm input[type="checkbox"] {
+    accent-color: #12a6b2;
+}
+
+/* Dark login link */
+html[data-theme="dark"] #registrationForm a {
+    color: #63d5dc;
+}
+
+html[data-theme="dark"] #registrationForm a:hover {
+    color: #ffffff;
+}
+
+/* Dark register button */
+html[data-theme="dark"] #registrationForm button {
+    background: #12a6b2;
+    color: #ffffff;
+}
+
+html[data-theme="dark"] #registrationForm button:hover {
+    background: #08747b;
+}
+/* ==========================================
+   DARK MODE - HEADER / PAGE SEPARATION
+   ========================================== */
+
+html[data-theme="dark"] header {
+    border-bottom: 2px solid #63d5dc;
+    box-shadow: 0 2px 8px rgba(99, 213, 220, 0.25);
 }
