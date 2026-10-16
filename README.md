@@ -1,2 +1,3 @@
-# StudentHub.
-Semester project for Web Development Frameworks.
+## StudentHub Updates
+
+Working on improving the StudentHub portal.
